@@ -1,0 +1,11 @@
+{
+  "environment": "fictional-demo",
+  "database_connected": false,
+  "remote_requests_allowed": false,
+  "files": {
+    "index.html": "81e923cd441a4345f3cf605b6f5ac8ca6e679b3d2446708055624991c9044989",
+    "styles.css": "40fac355f26d98900d5969600b7ed0fbfb8b4c3cec03440b7c8835ed03c9ce42",
+    "demo.js": "fede1be6a97959adc97ce46c67e34846c0ee1ed8f91acb193b9a48084ba8f29d",
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
