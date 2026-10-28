@@ -1,0 +1,26 @@
+{
+  "environment": "iasdpi-b12-isolated-homologation",
+  "source_branch": "feat/schedule-management-b1",
+  "source_preview_sha256": {
+    "IASDPI-B12-corrigida.html": "f359095dec494d84e79af98328eb3b88b19e5ceea951684d70d002f1ae42236a",
+    "IASDPI-B12-cenario-teste.html": "309c4313cee5e1eb3994d98ac14bcdf5940733fbeaeff0a2e1df29b3b5ac539e"
+  },
+  "database_connected": false,
+  "remote_requests_allowed": false,
+  "persistence": "in-tab-memory-only",
+  "known_people_have_confirmations_pending": true,
+  "fictional_scenario_separate": true,
+  "files": {
+    "index.html": "23c74f97ce4801762d3b17b382b271001fb124b56f49e1cfa780ee9ab81f86cc",
+    "IASDPI-B12-cenario-teste.html": "e9350841ef7e52c90d86bea22d55b3f03592513f2f361429861140f352194fad",
+    "IASDPI-B12-corrigida.html": "b583ca56e9b6c922f2aa94153e8f4737d5bb2829facfffe172a1c6cd8b8f1e7f"
+  },
+  "previous_site_commit": "79c2a258c7f2ef0bc6ab7d9c4154c901aef376b9",
+  "previous_paths_sha256": {
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "demo.js": "2e5c274e0fabc25ade3d82be2565ac5b57e7b8b95142862971bf2ef3da715768",
+    "index.html": "e594ea1e9998ce3cdc3a834d7a3a7ac23d3cf8f2e04acb78c52937d09f106c64",
+    "manifest.json": "0d28383eb157c3994620563136899733a01afcce8939635dc1b25857b207309b",
+    "styles.css": "9feb257d77376e4490b510dfc3047779c9b8120bbb463698d6e5388cb67ecd44"
+  }
+}
