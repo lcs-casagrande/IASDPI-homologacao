@@ -2,8 +2,8 @@
   "environment": "iasdpi-b12-isolated-homologation",
   "source_branch": "feat/schedule-management-b1",
   "source_preview_sha256": {
-    "IASDPI-B12-corrigida.html": "df0d019bda3bb24319a0f2c856a8a4454b806f2f00f69a7fcb65ffdca139138c",
-    "IASDPI-B12-cenario-teste.html": "992d190b29c2d4e8fcd890f97d9a9c8f33ae16b3239be8ab12138b8bb4c1925f"
+    "IASDPI-B12-corrigida.html": "882c2b4170fb2e0a46a6a62520e90e014a53e7c854cb38db8a480f7524a6874b",
+    "IASDPI-B12-cenario-teste.html": "bdd3af75f6f95fdbc6893bdf6d9d1ad5ead712771d2336f432f17e7875989a35"
   },
   "database_connected": false,
   "remote_requests_allowed": false,
@@ -11,11 +11,11 @@
   "known_people_have_confirmations_pending": false,
   "fictional_scenario_separate": true,
   "files": {
-    "index.html": "ceefc2ffd81d926993300bea4ea349799bda1115ff39858cd1b203751cc54e2a",
-    "IASDPI-B12-corrigida.html": "43ffcf48f9f57cad8e9a7637dfc66a9ad887bcaaafe1480735197eb91c594b3e",
-    "IASDPI-B12-cenario-teste.html": "b66ff22a685d75e32b3a57e42ab148fc9dbddadced323bd4870b8a540ab0af32"
+    "index.html": "02f8a9ea850eac8bad90937762e042bbdfc9ddc37f153f57d10bd37157ee4d4e",
+    "IASDPI-B12-corrigida.html": "b3d1f0faebc88189ccfa770fd7f89d8da1e5f83a91695ae0bbb9826533016c3c",
+    "IASDPI-B12-cenario-teste.html": "dfe4398699386ad13482050567ef6b9a0f9cc8d8606e602ef1e687890bf04b51"
   },
-  "previous_site_commit": "294c428ba3c5a93559629d18fe7799eb5de4abbd",
+  "previous_site_commit": "daedfd83e395a92c4ce27191323ab2383a389d99",
   "previous_paths_sha256": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "demo.js": "2e5c274e0fabc25ade3d82be2565ac5b57e7b8b95142862971bf2ef3da715768",
@@ -30,5 +30,11 @@
   "elder_periods": true,
   "simplified_editor": true,
   "day_details_block": false,
-  "publication_calendar_flow": true
+  "publication_calendar_flow": true,
+  "elder_weekly_calendar": true,
+  "elder_annual_calendar": true,
+  "communication_new_weekdays": [
+    6
+  ],
+  "child_ministry_active": false
 }
