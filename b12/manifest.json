@@ -2,8 +2,8 @@
   "environment": "iasdpi-b12-isolated-homologation",
   "source_branch": "feat/schedule-management-b1",
   "source_preview_sha256": {
-    "IASDPI-B12-corrigida.html": "fce146ece2a574d406cb6cc75d89055381b79b3d519107dd4e72649d1d711c91",
-    "IASDPI-B12-cenario-teste.html": "522cfe23199bbe09bd33f2459bee92d8b9f6944ebb6d2fd3f6f9e25881e20079"
+    "IASDPI-B12-corrigida.html": "df0d019bda3bb24319a0f2c856a8a4454b806f2f00f69a7fcb65ffdca139138c",
+    "IASDPI-B12-cenario-teste.html": "992d190b29c2d4e8fcd890f97d9a9c8f33ae16b3239be8ab12138b8bb4c1925f"
   },
   "database_connected": false,
   "remote_requests_allowed": false,
@@ -11,11 +11,11 @@
   "known_people_have_confirmations_pending": false,
   "fictional_scenario_separate": true,
   "files": {
-    "index.html": "42c13c19174cac24b808b9d6d06e31c025d024676ce02f09e1e75b11ed2fae04",
-    "IASDPI-B12-corrigida.html": "4cc7d9ba782cac827919fd18915a70bc69c6d1d30ef366879988dc32bd8009d1",
-    "IASDPI-B12-cenario-teste.html": "aeb9f5becd0fe449509801bc368c3a7a76d95e38aa96da628575582d41ed7482"
+    "index.html": "ceefc2ffd81d926993300bea4ea349799bda1115ff39858cd1b203751cc54e2a",
+    "IASDPI-B12-corrigida.html": "43ffcf48f9f57cad8e9a7637dfc66a9ad887bcaaafe1480735197eb91c594b3e",
+    "IASDPI-B12-cenario-teste.html": "b66ff22a685d75e32b3a57e42ab148fc9dbddadced323bd4870b8a540ab0af32"
   },
-  "previous_site_commit": "453cc62b001ef201b7def8f487a53b43439c1cb4",
+  "previous_site_commit": "294c428ba3c5a93559629d18fe7799eb5de4abbd",
   "previous_paths_sha256": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "demo.js": "2e5c274e0fabc25ade3d82be2565ac5b57e7b8b95142862971bf2ef3da715768",
@@ -27,5 +27,8 @@
   "availability_is_advisory_for_manual": true,
   "authentication": "simulated-admin-no-real-account",
   "availability_enabled": false,
-  "elder_periods": true
+  "elder_periods": true,
+  "simplified_editor": true,
+  "day_details_block": false,
+  "publication_calendar_flow": true
 }
