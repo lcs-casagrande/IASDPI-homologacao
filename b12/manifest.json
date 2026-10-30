@@ -2,8 +2,9 @@
   "environment": "iasdpi-b12-isolated-homologation",
   "source_branch": "feat/schedule-management-b1",
   "source_preview_sha256": {
-    "IASDPI-B12-corrigida.html": "882c2b4170fb2e0a46a6a62520e90e014a53e7c854cb38db8a480f7524a6874b",
-    "IASDPI-B12-cenario-teste.html": "bdd3af75f6f95fdbc6893bdf6d9d1ad5ead712771d2336f432f17e7875989a35"
+    "IASDPI-B12-corrigida.html": "ae936c5ae317b71e983be358707cc0babc4ab636ad6c456566cadd3b48b66c43",
+    "IASDPI-B12-cenario-teste.html": "bdd3af75f6f95fdbc6893bdf6d9d1ad5ead712771d2336f432f17e7875989a35",
+    "index.html": "ae936c5ae317b71e983be358707cc0babc4ab636ad6c456566cadd3b48b66c43"
   },
   "database_connected": false,
   "remote_requests_allowed": false,
@@ -11,11 +12,11 @@
   "known_people_have_confirmations_pending": false,
   "fictional_scenario_separate": true,
   "files": {
-    "index.html": "02f8a9ea850eac8bad90937762e042bbdfc9ddc37f153f57d10bd37157ee4d4e",
-    "IASDPI-B12-corrigida.html": "b3d1f0faebc88189ccfa770fd7f89d8da1e5f83a91695ae0bbb9826533016c3c",
+    "index.html": "ae936c5ae317b71e983be358707cc0babc4ab636ad6c456566cadd3b48b66c43",
+    "IASDPI-B12-corrigida.html": "ae936c5ae317b71e983be358707cc0babc4ab636ad6c456566cadd3b48b66c43",
     "IASDPI-B12-cenario-teste.html": "dfe4398699386ad13482050567ef6b9a0f9cc8d8606e602ef1e687890bf04b51"
   },
-  "previous_site_commit": "daedfd83e395a92c4ce27191323ab2383a389d99",
+  "previous_site_commit": "c1c8b0882d4106c5676eda3395fd8e3407497f90",
   "previous_paths_sha256": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "demo.js": "2e5c274e0fabc25ade3d82be2565ac5b57e7b8b95142862971bf2ef3da715768",
@@ -36,5 +37,11 @@
   "communication_new_weekdays": [
     6
   ],
-  "child_ministry_active": false
+  "child_ministry_active": false,
+  "review_ready": true,
+  "compact_header": true,
+  "month_picker_locale": "pt-BR",
+  "month_selection_requires_confirmation": false,
+  "elder_monthly_conflicts_enabled": false,
+  "canonical_entry": "index.html"
 }
