@@ -4,7 +4,7 @@
   "remote_requests_allowed": false,
   "temporary_edits": true,
   "source_branch": "feat/schedule-management-b1",
-  "source_commit": "d2c4807ab1c72afa8a798eddf999da660ea06f0c",
+  "source_commit": "a61cda37b98dac84fbb01d8dde65efb131586a47",
   "source_dirty": false,
   "features": [
     "portal",
@@ -15,13 +15,27 @@
     "rodizio",
     "conflitos",
     "acessos-demonstrativos",
-    "events"
+    "events",
+    "recurring-events",
+    "exclusive-space-reservations",
+    "event-approval-pending",
+    "unified-login",
+    "optional-session-persistence",
+    "music-multiselect"
   ],
   "excluded": [],
   "events": true,
   "calendar_privacy": true,
   "files": {
-    "LEIA-ME.md": "2d0e01b06abcb874c063710d3287f13baf12b0b9ee599e324c658b9443d51255",
-    "index.html": "8e4f3d6753b8a95caf042e2797ad560e1fbb8b2d14b7aee677382c6727aff465"
+    "LEIA-ME.md": "75d15d7bbdc25ea8b42a2cc297882b0f35dcf82191377a9aa06319cc4e384efe",
+    "index.html": "0dc5f4af0093ca3e5571ddb322151854ea18bfcd35ff80e8261ff4a66cc529c8"
+  },
+  "event_management_v2": true,
+  "validation": {
+    "selected_unique_cases_passed": 374,
+    "prepublish_rechecked_cases_passed": 17,
+    "database": "disposable PostgreSQL only; no production connection",
+    "ui": "Chromium, 360/390/768/1024/1440px",
+    "exact_package_browser_cases_passed": 18
   }
 }
