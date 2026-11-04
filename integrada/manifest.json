@@ -4,7 +4,7 @@
   "remote_requests_allowed": false,
   "temporary_edits": true,
   "source_branch": "feat/schedule-management-b1",
-  "source_commit": "a61cda37b98dac84fbb01d8dde65efb131586a47",
+  "source_commit": "1aba2fa2f416a7294b208ad24b72e3d9c388f766",
   "source_dirty": false,
   "features": [
     "portal",
@@ -21,21 +21,28 @@
     "event-approval-pending",
     "unified-login",
     "optional-session-persistence",
-    "music-multiselect"
+    "music-multiselect",
+    "current-month-editing",
+    "locked-past-dates",
+    "admin-future-window",
+    "rotation-eligibility-feedback"
   ],
   "excluded": [],
   "events": true,
   "calendar_privacy": true,
   "files": {
-    "LEIA-ME.md": "75d15d7bbdc25ea8b42a2cc297882b0f35dcf82191377a9aa06319cc4e384efe",
-    "index.html": "0dc5f4af0093ca3e5571ddb322151854ea18bfcd35ff80e8261ff4a66cc529c8"
+    "LEIA-ME.md": "2676056d99cdeec085985d35edb186315ded8ac34f49976acd3f9a3f5786c1ef",
+    "index.html": "b2e713070b2fbf681aaaae6c19087ecbea0103a0d8311c231782ff0ce273f1ce"
   },
   "event_management_v2": true,
   "validation": {
-    "selected_unique_cases_passed": 374,
-    "prepublish_rechecked_cases_passed": 17,
+    "selected_unique_cases_passed": 96,
+    "postgresql_cases_passed": 14,
+    "previous_events_delivery_selected_cases_passed": 374,
+    "standalone_preview_rechecked_cases_passed": 4,
     "database": "disposable PostgreSQL only; no production connection",
-    "ui": "Chromium, 360/390/768/1024/1440px",
-    "exact_package_browser_cases_passed": 18
-  }
+    "ui": "Chromium local, desktop/mobile; 13 checks on exact static package",
+    "exact_package_browser_cases_passed": 13
+  },
+  "schedule_edit_policy": true
 }

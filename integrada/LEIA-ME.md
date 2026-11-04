@@ -30,7 +30,7 @@ A mesma senha acima serve apenas ao simulador público. Nunca utilizá-la em con
 Fontes históricas autorizadas permanecem separadas dos dados editados na demonstração.
 Os exemplos fictícios anteriores de rodízio também permanecem em ../b12/.
 
-Sem login: eventos não restritos e Ancionato. Demais escalas exigem login simulado e permissão. Gestão de Eventos apresenta Responsável / Organizador, Público-alvo e Restrito independentes. O simulador estático não oferece privacidade real; suas identidades são fictícias e os dados estão no HTML. Não publicar informações confidenciais nesta prévia. A proteção operacional depende das migrações revisadas até 022 e do Supabase Auth reais. Nenhuma migração é executada por esta página.
+Sem login: eventos não restritos e Ancionato. Demais escalas exigem login simulado e permissão. Gestão de Eventos apresenta Responsável / Organizador, Público-alvo e Restrito independentes. O simulador estático não oferece privacidade real; suas identidades são fictícias e os dados estão no HTML. Não publicar informações confidenciais nesta prévia. A proteção operacional depende das migrações revisadas até 023 e do Supabase Auth reais. Nenhuma migração é executada por esta página.
 
 ## Navegação e criação de escala
 
@@ -52,4 +52,18 @@ Sem login: eventos não restritos e Ancionato. Demais escalas exigem login simul
 7. Série conflitante mostra os detalhes e oferece Continuar e enviar para aprovação. Confirmar não publica nem confirma novas reservas. Um evento único conflitante continua bloqueado.
 8. A tela de decisão dos anciãos será uma próxima etapa. Resolver o conflito não concede aprovação automaticamente.
 
-Código-fonte: branch feat/schedule-management-b1 do repositório Avaliacoes_mentorama_SQL. Consulte source_commit no manifest.json para a versão exata. Validação da entrega: 374 cenários selecionados aprovados, incluindo PostgreSQL descartável; antes da publicação, 17 cenários de eventos/login/Música reexecutados com sucesso. PostgreSQL, Supabase e contas reais não são acessados pela demonstração. O pacote estático exato passou em 18 verificações no Chromium, incluindo navegação pública/administrativa e celular. A Cronoanálise mantém sua autorização própria, sem promover o administrador ministerial automaticamente.
+Código-fonte: branch feat/schedule-management-b1 do repositório Avaliacoes_mentorama_SQL. Consulte source_commit no manifest.json para a versão exata. Validação da entrega anterior de Eventos: 374 cenários selecionados aprovados, incluindo PostgreSQL descartável; antes da publicação, 17 cenários de eventos/login/Música reexecutados com sucesso. PostgreSQL, Supabase e contas reais não são acessados pela demonstração. O pacote estático exato passou em 18 verificações no Chromium, incluindo navegação pública/administrativa e celular. A Cronoanálise mantém sua autorização própria, sem promover o administrador ministerial automaticamente.
+
+## Correção do mês atual e rodízio — 023
+
+1. Entre em Escalas e escolha Sonoplastia ou Comunicação. O mês atual abre automaticamente, com listas nas datas ainda editáveis. Não é necessário preparar eventos ou procurar Começar escala.
+2. Hoje e dias seguintes do mês atual estão liberados conforme a permissão do departamento. Ontem e datas anteriores permanecem somente para consulta. Limpar escala e salvar preservam os registros encerrados.
+3. O administrador usa Período de edição ou Administração → Configurações de escalas → Meses futuros liberados para escolher 1, 2, 3 ou 6 meses. O mês seguinte está incluído; o mês atual continua liberado a partir de hoje. O valor anterior da configuração foi preservado. Escolha 1 mês se quiser liberar somente o mês seguinte.
+4. No Ancionato, períodos já encerrados ficam bloqueados. A semana/mês em curso pode ser revisado como unidade, preservando intervalo e histórico. O calendário anual mantém 12 meses, com seletores desabilitados fora do intervalo liberado.
+5. Para testar Preencher automaticamente, confirme participação, função habilitada e dias disponíveis no Cadastro Geral da equipe. Nomes sem confirmação não são presumidos como disponíveis. Sem pessoas elegíveis, aparecem 0 vagas sugeridas, Conferir equipe e ajuda com os motivos.
+6. Com pessoas confirmadas, o rodízio preenche somente datas liberadas, preserva escolhas manuais e verifica compromissos publicados de todos os departamentos. A proposta continua editável e exige salvar/publicar separadamente.
+7. Música permanece com automático desativado, mantendo seleção múltipla manual. Eventos, calendário público, Organograma, Cadastro Geral e autorização própria da Cronoanálise foram preservados.
+
+Esta correção foi validada em 96 cenários selecionados, incluindo 14 testes em PostgreSQL descartável, sem executar migrações no Supabase. A validação integral do banco real depende da implantação autorizada da 023. O Pages executa apenas o adaptador demonstrativo em memória; nenhuma conta ou configuração real foi alterada.
+
+Antes do push desta versão, o pacote estático exato passou em 13 verificações no Chromium, incluindo navegação pública/administrativa, desktop e celular.
