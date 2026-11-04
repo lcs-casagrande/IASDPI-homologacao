@@ -1,0 +1,26 @@
+{
+  "environment": "isolated-demo",
+  "database_connected": false,
+  "remote_requests_allowed": false,
+  "temporary_edits": true,
+  "source_branch": "feat/schedule-management-b1",
+  "source_commit": "676ac5c6e24dd26b917d14d02fdb1ab428c3cc9c",
+  "source_dirty": false,
+  "features": [
+    "portal",
+    "agenda",
+    "organograma",
+    "cadastro-geral",
+    "escalas",
+    "rodizio",
+    "conflitos",
+    "acessos-demonstrativos"
+  ],
+  "excluded": [
+    "E1"
+  ],
+  "files": {
+    "LEIA-ME.md": "237ac9496f31dd3cf078171c2548979d5c2516261d86430ba79e2835028a4ca9",
+    "index.html": "1e58769123bd55bffbbaa1b2eab6751e2209b6542627024e498b53547e9ff7ef"
+  }
+}
