@@ -30,7 +30,7 @@ A mesma senha acima serve apenas ao simulador público. Nunca utilizá-la em con
 Fontes históricas autorizadas permanecem separadas dos dados editados na demonstração.
 Os exemplos fictícios anteriores de rodízio também permanecem em ../b12/.
 
-Sem login: eventos não restritos e Ancionato. Demais escalas exigem login simulado e permissão. Gestão de Eventos apresenta Responsável / Organizador, Público-alvo e Restrito independentes. O simulador estático não oferece privacidade real; suas identidades são fictícias e os dados estão no HTML. Não publicar informações confidenciais nesta prévia. A proteção operacional depende das migrações revisadas até 023 e do Supabase Auth reais. Nenhuma migração é executada por esta página.
+Sem login: eventos não restritos e Ancionato. Demais escalas exigem login simulado e permissão. Gestão de Eventos apresenta Responsável / Organizador, Público-alvo e Restrito independentes. O simulador estático não oferece privacidade real; suas identidades são fictícias e os dados estão no HTML. Não publicar informações confidenciais nesta prévia. A proteção operacional depende das migrações revisadas até 025 e do Supabase Auth reais. Nenhuma migração é executada por esta página.
 
 ## Navegação e criação de escala
 
@@ -48,9 +48,9 @@ Sem login: eventos não restritos e Ancionato. Demais escalas exigem login simul
 3. Selecione um responsável/organizador e um Público-alvo independentes. Restrito controla a consulta pública.
 4. Selecione vários espaços. Nave, Quadra e Pátio são exclusivos por intervalo; Salas e Externo permitem atividades simultâneas. Teste com títulos sintéticos, sem dados privados.
 5. Recorrência semanal ou mensal gera até 31 de dezembro do ano corrente em São Paulo. Abra uma ocorrência para editar apenas ela, as seguintes ou a série inteira; cancelar uma ocorrência mantém o histórico.
-6. Programação Departamental ou Atividade Reservada sem conflitos pode ser publicada conforme a permissão. Nova Programação Geral fica Pendente de aprovação e fora do calendário público.
-7. Série conflitante mostra os detalhes e oferece Continuar e enviar para aprovação. Confirmar não publica nem confirma novas reservas. Um evento único conflitante continua bloqueado.
-8. A tela de decisão dos anciãos será uma próxima etapa. Resolver o conflito não concede aprovação automaticamente.
+6. Todas as categorias podem ser publicadas diretamente por quem possui permissão. Não há etapa de aprovação intermediária.
+7. Conflitos de reserva impedem a publicação. Use Salvar como rascunho e ajuste locais ou horários antes de publicar. Rascunhos não confirmam novas reservas.
+8. Eventos que antes estavam pendentes podem ser abertos e publicados pelo usuário autorizado. Os IDs e o histórico são preservados; nenhum evento é publicado automaticamente.
 
 Código-fonte: branch feat/schedule-management-b1 do repositório Avaliacoes_mentorama_SQL. Consulte source_commit no manifest.json para a versão exata. Validação da entrega anterior de Eventos: 374 cenários selecionados aprovados, incluindo PostgreSQL descartável; antes da publicação, 17 cenários de eventos/login/Música reexecutados com sucesso. PostgreSQL, Supabase e contas reais não são acessados pela demonstração. O pacote estático exato passou em 18 verificações no Chromium, incluindo navegação pública/administrativa e celular. A Cronoanálise mantém sua autorização própria, sem promover o administrador ministerial automaticamente.
 
@@ -67,3 +67,13 @@ Código-fonte: branch feat/schedule-management-b1 do repositório Avaliacoes_men
 Esta correção foi validada em 96 cenários selecionados, incluindo 14 testes em PostgreSQL descartável, sem executar migrações no Supabase. A validação integral do banco real depende da implantação autorizada da 023. O Pages executa apenas o adaptador demonstrativo em memória; nenhuma conta ou configuração real foi alterada.
 
 Antes do push desta versão, o pacote estático exato passou em 13 verificações no Chromium, incluindo navegação pública/administrativa, desktop e celular.
+
+## Publicação direta e ajustes de escalas — 024/025
+
+- Pessoas aparecem em ordem alfabética nas listas e no calendário.
+- Comunicação permite a mesma pessoa em outro departamento na mesma data. Os demais conflitos continuam bloqueados, conforme as regras vigentes do Ancionato.
+- Escalas podem ser publicadas com vagas em aberto, indicadas como A definir. Rascunhos não aparecem publicamente.
+- Em Eventos, preencha os campos e use Publicar. Salvar rascunho mantém a edição privada. Restrito continua impedindo consulta pública, mesmo depois da publicação.
+- Não há gravação compartilhada nesta página. Atualizar reinicia os dados editados. Nenhuma migração, conta ou configuração real é alterada.
+
+Validação desta publicação: **191 cenários selecionados aprovados**, incluindo 51 testes de PostgreSQL descartável. O pacote estático exato passou em 21 verificações no Chromium, incluindo publicação direta e navegação no celular. Reexecuções não aumentam a contagem. A suíte histórica completa não foi reexecutada nesta entrega.

@@ -4,7 +4,7 @@
   "remote_requests_allowed": false,
   "temporary_edits": true,
   "source_branch": "feat/schedule-management-b1",
-  "source_commit": "1aba2fa2f416a7294b208ad24b72e3d9c388f766",
+  "source_commit": "f7922c281d53a33a103f2510728fa02cdb69d58c",
   "source_dirty": false,
   "features": [
     "portal",
@@ -18,31 +18,36 @@
     "events",
     "recurring-events",
     "exclusive-space-reservations",
-    "event-approval-pending",
     "unified-login",
     "optional-session-persistence",
     "music-multiselect",
     "current-month-editing",
     "locked-past-dates",
     "admin-future-window",
-    "rotation-eligibility-feedback"
+    "rotation-eligibility-feedback",
+    "alphabetical-people",
+    "communication-non-blocking",
+    "publication-with-vacancies",
+    "direct-event-publication"
   ],
   "excluded": [],
   "events": true,
   "calendar_privacy": true,
   "files": {
-    "LEIA-ME.md": "2676056d99cdeec085985d35edb186315ded8ac34f49976acd3f9a3f5786c1ef",
-    "index.html": "b2e713070b2fbf681aaaae6c19087ecbea0103a0d8311c231782ff0ce273f1ce"
+    "LEIA-ME.md": "ee116e3c5c4a26fb2091b6ebe36c6852aab436965322c1d083a7015e5a963587",
+    "index.html": "cd75fde86f84d7fbf806330993a25db2993d6f4badb6774a5190f5e946621517"
   },
   "event_management_v2": true,
   "validation": {
-    "selected_unique_cases_passed": 96,
-    "postgresql_cases_passed": 14,
-    "previous_events_delivery_selected_cases_passed": 374,
-    "standalone_preview_rechecked_cases_passed": 4,
-    "database": "disposable PostgreSQL only; no production connection",
-    "ui": "Chromium local, desktop/mobile; 13 checks on exact static package",
-    "exact_package_browser_cases_passed": 13
+    "selected_unique_cases_passed": 191,
+    "postgresql_cases_passed": 51,
+    "post_025_postgresql_cases_passed": 16,
+    "exact_package_browser_cases_passed": 21,
+    "database": "PostgreSQL descartável sem rede. Nenhuma conexão ao Supabase.",
+    "ui": "Chromium local; 360, 390, 768, 1024 e 1440 px. Casos repetidos não somados.",
+    "full_historical_suite_rerun": false
   },
-  "schedule_edit_policy": true
+  "schedule_edit_policy": true,
+  "event_approval_required": false,
+  "allow_pending_publication": true
 }
