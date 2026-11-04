@@ -1,7 +1,7 @@
 # IASDPI — Homologação integrada
 
 Portal, Agenda, Organograma, Cadastro Geral, Escalas e acessos demonstrativos.
-E1 (Gestão de Eventos) não está implementada nesta candidata.
+E1: Gestão de Eventos e Calendário Unificado. Abra Gestão de Eventos após entrar. A Agenda oficial é reutilizada; importar exige revisão administrativa e cria rascunho.
 
 As alterações ficam em memória e reiniciam ao recarregar. Não inserir dados privados.
 Não há conexão com Supabase, envio de e-mails ou contas reais.
@@ -17,14 +17,14 @@ Não há conexão com Supabase, envio de e-mails ou contas reais.
 
 | Identificador fictício | Alcance |
 | --- | --- |
-| admin.teste | Administração demonstrativa da IASD_PI |
-| som.teste | Sonoplastia |
-| musica.teste | Música |
-| anciao.teste | Ancionato semanal e mensal |
-| multi.teste | Sonoplastia e Música |
-| leitura.teste | Consulta sem gravação |
-| editor.teste | Edição sem publicação |
-| crono.teste | Cronoanálise demonstrativa |
+| admin.iasdpi | Administração demonstrativa da IASD_PI |
+| som.iasdpi | Sonoplastia |
+| musica.iasdpi | Música |
+| anciao.iasdpi | Ancionato semanal e mensal |
+| multi.iasdpi | Sonoplastia e Música |
+| leitura.iasdpi | Consulta sem gravação |
+| editor.iasdpi | Edição sem publicação |
+| crono.iasdpi | Cronoanálise demonstrativa |
 
 A mesma senha acima serve apenas ao simulador público. Nunca utilizá-la em contas reais.
 Fontes históricas autorizadas permanecem separadas dos dados editados na demonstração.
