@@ -4,7 +4,7 @@
   "remote_requests_allowed": false,
   "temporary_edits": true,
   "source_branch": "feat/schedule-management-b1",
-  "source_commit": "fd707eed7c8427070adb77d309fadaf505567f35",
+  "source_commit": "9fdbf4dd580d99d5cd86d0ab3c59262e717c26f7",
   "source_dirty": false,
   "features": [
     "portal",
@@ -21,6 +21,6 @@
   "events": true,
   "files": {
     "LEIA-ME.md": "93dd99eb1452e6c0e491b8f006cc0aef295a44fd388d8a49e66c160781dafb8d",
-    "index.html": "79a8a82865bcfadf00b1774e01bc49b114d5d44a5765db9bc5dfea7c8bac9397"
+    "index.html": "105d900f4451b3407d242b53340cafa0039bfce6cdb7b3d941472af25804e8e5"
   }
 }
