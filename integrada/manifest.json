@@ -4,7 +4,7 @@
   "remote_requests_allowed": false,
   "temporary_edits": true,
   "source_branch": "feat/schedule-management-b1",
-  "source_commit": "2a50af5989dbdb32a580d3f2702d2245329e6dfc",
+  "source_commit": "ff235ba2d312fa2eca0e802cd66a7acb57a7a649",
   "source_dirty": false,
   "features": [
     "portal",
@@ -33,23 +33,42 @@
     "individual-account-management",
     "multi-ministry-permissions",
     "administrative-audit",
-    "simulated-first-password-change"
+    "simulated-first-password-change",
+    "functional-governance-validation",
+    "account-suspension-fixed",
+    "unified-simulated-audit",
+    "general-series-approval",
+    "clear-empty-states"
   ],
   "excluded": [],
   "events": true,
   "calendar_privacy": true,
   "files": {
-    "LEIA-ME.md": "61f47bd7e6ed302bc4583c8b0cc1c9cbeda043fd0a841b0ea2cfd2fd09c19704",
-    "index.html": "ad0992281c37595adf171b473f7f366df236fab96870fda752a2d0f36c9e60d3"
+    "index.html": "a14ef70a3d7a33302f2f5f4f3fdc48f6e1dd05b05d44bd0124b19d6bafdbcffc",
+    "LEIA-ME.md": "a662ee184f3ea728615e3ed6bbaeea1c8be0d7b34c3e1fb99a50b43d4704eb1f"
   },
   "event_management_v2": true,
   "validation": {
-    "selected_unique_tests_passed": 127,
-    "postgresql": 39,
-    "g11_browser": 8,
-    "package_and_navigation_regression": 41,
-    "node_auth_and_accounts": 39,
-    "full_historical_suite_rerun": false
+    "selected_unique_tests_passed": 149,
+    "suites": {
+      "postgres.log": 37,
+      "postgres-functional.log": 4,
+      "browser-release.log": 17,
+      "browser-g11-release.log": 8,
+      "crono-regression.log": 9,
+      "navigation-regression.log": 8,
+      "package-isolation.log": 11,
+      "node-release.log": 55
+    },
+    "viewports": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "full_historical_suite_rerun": false,
+    "real_auth_edge_gotrue_smtp_validated": false
   },
   "schedule_edit_policy": true,
   "event_approval_required": true,
@@ -57,5 +76,7 @@
   "governance_administration": 11,
   "authentication": "simulated-only",
   "required_future_migrations": "005–027; not executed",
-  "published_scope": "static homologation only"
+  "published_scope": "static homologation only",
+  "functional_validation_phase": "G12",
+  "session_namespace": "iasdpi-g12-preview-v1"
 }

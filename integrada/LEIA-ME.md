@@ -1,6 +1,6 @@
-# IASDPI — Homologação integrada G11
+# IASDPI — Homologação funcional G12
 
-[Portal integrado](../integrada/) · [Versão G11](../g11/) · [Demonstrações anteriores](../)
+[Portal integrado](../integrada/) · [Versão G12](../g12/) · [G11 preservada](../g11/) · [Demonstrações anteriores](../)
 
 Ambiente estático de homologação. **Autenticação simulada; alterações temporárias em memória, reiniciadas ao recarregar.** Não inserir dados privados. Não há conexão ao Supabase, envio de e-mails, contas reais ou migrações executadas.
 
@@ -31,8 +31,12 @@ O HTML contém os dados autorizados da prévia e o simulador; ocultação de tel
 
 ## Validação e ativação futura
 
-**127 testes selecionados aprovados:** 39 PostgreSQL descartável, 8 fluxos visuais G11, 41 testes de pacote/navegação/regressão e 39 testes de Auth/Edge/credenciais. A suíte histórica completa não foi reexecutada. Chromium local em desktop/celular; Auth real, SMTP e aparelhos físicos ainda exigem homologação controlada.
+**149 testes selecionados aprovados:** 41 PostgreSQL descartável, 25 fluxos visuais G12/G11 no HTML estático exato, 9 de Cronoanálise/Auth frontend, 8 de navegação, 11 de isolamento do pacote e 55 Node. Reexecuções não somadas; suíte histórica completa não reexecutada. Chromium local entre 360 e 1440 px.
+
+G12 corrige a suspensão de conta na simulação, o status dos ministérios suspensos, os registros administrativos de Cadastro/Escalas/Eventos e a aprovação de séries gerais. A Auditoria tem rótulos legíveis para os RPCs reais e mensagens de estado vazio. As dez jornadas solicitadas passaram; o Ancionato semanal e mensal mantém publicação independente.
+
+Os testes SQL usam Auth sintético. GoTrue/SMTP/gateway reais, gravação compartilhada entre dispositivos e integração hospedada ainda dependem de homologação controlada. Esta página é um simulador por aba, não um backend ativo.
 
 Migração 027 preparada após 005–026, sem aplicação no Supabase. Backup recuperável, autorização de implantação, configuração Auth/Edge/domínio institucional e testes reais continuam pendentes. Nenhuma conta, permissão, configuração ou banco real foi alterado.
 
-Código, matriz de permissões e relatório: [branch de desenvolvimento](https://github.com/lcs-casagrande/Avaliacoes_mentorama_SQL/tree/feat/schedule-management-b1), `docs/governance-g11.md`. Versão exata e hashes dos arquivos neste diretório: `manifest.json`.
+Código, matriz de permissões e relatório: [branch de desenvolvimento](https://github.com/lcs-casagrande/Avaliacoes_mentorama_SQL/tree/feat/schedule-management-b1), `docs/governance-g12.md`. Versão exata e hashes dos arquivos neste diretório: `manifest.json`.
