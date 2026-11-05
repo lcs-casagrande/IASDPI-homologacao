@@ -1,42 +1,25 @@
-# IASDPI — Homologação funcional G12
+# IASDPI — Usuários e Acessos institucionais (G12)
 
-[Portal integrado](../integrada/) · [Versão G12](../g12/) · [G11 preservada](../g11/) · [Demonstrações anteriores](../)
+[Homologação integrada](../integrada/) · [Cópia desta versão](../g12-acessos/) · [G12 anterior](../g12/) · [G11](../g11/) · [Demonstrações anteriores](../)
 
-Ambiente estático de homologação. **Autenticação simulada; alterações temporárias em memória, reiniciadas ao recarregar.** Não inserir dados privados. Não há conexão ao Supabase, envio de e-mails, contas reais ou migrações executadas.
+**Autenticação simulada. Dados temporários em memória da aba; recarregar reinicia as alterações.** Nenhuma conexão com Supabase, conta real, envio de e-mail ou migração executada. Não digite credenciais ou dados privados reais.
 
-## Como testar
+## Testar
 
-1. Consulte Calendário e Organograma sem login.
-2. Entre com `admin.iasdpi` e senha **exclusivamente fictícia** `Demonstracao#2026`.
-3. Em Administração → Usuários e Acessos, pesquise pessoas, confira responsáveis sem conta, vincule uma identidade existente ou crie uma identidade simulada para uma pessoa central. A senha provisória individual fica oculta inicialmente e só aparece após concluir a simulação; não há concessão automática de permissões.
-4. Configure ministérios e permissões individualmente, suspenda/revogue e confira Administração → Auditoria. A edição dos dados pessoais permanece no Cadastro Geral.
-5. Eventos departamentais podem ser publicados diretamente por seu líder autorizado. Eventos gerais enviados por líderes aguardam administrador ou ancião explicitamente autorizado; aprove/publice ou rejeite, preservando o histórico.
-6. Em Escalas, selecione departamento e mês. Salvar rascunho e Publicar são separados. Música mantém seleção múltipla manual e automático desativado. O rodízio dos demais departamentos exige participação, habilitação e disponibilidade confirmadas.
-7. Confira o calendário publicado na mesma aba. Rascunhos e eventos restritos não aparecem na consulta pública. A política atual mantém demais escalas sob login e Ancionato público.
+1. Entre com **admin** / **Demonstracao#2026**, exclusivamente fictícios. IASD Parada Inglesa vem selecionada.
+2. Abra Administração → Usuários e Acessos: tabela única de logins institucionais, departamentos e cargos do Organograma. Responsável vem do Cadastro Geral; pesquisa não cadastra nomes. Selecione departamentos autorizados e salve a linha.
+3. Sonoplastia e qualquer outro departamento podem receber vários escopos. Cada login permanece fixo; a mesma pessoa em várias linhas mantém uma identidade individual. Administração e aprovação geral exigem confirmações próprias.
+4. Troque um responsável, confirme e salve. Use Redefinir senha, após confirmar a identidade. Copie o link temporário e saia. **Nesta simulação, abra o link na mesma aba, sem recarregar nem abrir outra aba**; a fila está só nessa memória. Defina uma senha fictícia nova e entre pelo login institucional. No sistema real, o link depende do Supabase Auth e poderá ser entregue ao responsável após autorização.
+5. Entre como **membro** / **Demonstracao#2026** para consultar somente escalas publicadas autorizadas e eventos abertos. Não tem edição, Cadastro Geral, rascunhos, eventos restritos ou ferramentas administrativas. A identidade compartilhada é diferente da identidade pessoal do custodiante.
+6. Use Departamentos, abaixo da tabela, para criar, arquivar ou reativar. As opções são compartilhadas com Cadastro Geral, Organograma, Eventos e Escalas; arquivar preserva históricos e IDs.
+7. Administração → Auditoria registra as ações. Eventos departamentais publicam diretamente; eventos gerais solicitados por líderes aguardam administrador/ancião autorizado. Escalas mantêm salvar/publicar separados, conflitos e rodízio existentes. Música mantém seleção múltipla manual.
 
-| Identificador fictício | Perfil |
-| --- | --- |
-| admin.iasdpi | Administrador |
-| som.iasdpi | Líder de Sonoplastia |
-| musica.iasdpi | Líder de Música |
-| anciao.iasdpi | Ancionato e aprovação geral autorizada |
-| multi.iasdpi | Vários ministérios |
-| leitura.iasdpi | Consulta sem edição |
-| editor.iasdpi | Edição sem publicação |
-| crono.iasdpi | Cronoanálise demonstrativa |
+Contas fictícias anteriores continuam disponíveis para compatibilidade: `admin.iasdpi`, `som.iasdpi`, `musica.iasdpi`, `anciao.iasdpi`. Os aliases institucionais correspondentes são `admin`, `sonoplastia`, `musica` e `anciao_7` nesta prévia. Credencial inicial somente demonstrativa: `Demonstracao#2026`. Após trocar responsável, use o fluxo de redefinição; o alias não reutiliza a credencial da pessoa anterior. Não há autenticação ou persistência compartilhada real no GitHub Pages.
 
-As identidades iniciais usam a senha fictícia acima somente no simulador público. Novas identidades simuladas recebem senha provisória única e devem alterá-la no primeiro acesso. Nunca usar essas credenciais em contas reais.
+## Validação e implantação
 
-O HTML contém os dados autorizados da prévia e o simulador; ocultação de telas não oferece confidencialidade neste artefato público. Cronoanálise mantém autorização própria. Históricos, nomes/IDs centrais e demonstrações anteriores foram preservados.
+**139 testes selecionados aprovados:** 15 jornadas na prévia exata, 8 contratos de arquivos, 63 Node e 53 de regressão G11/G12/Cronoanálise/navegação/isolamento. Chromium local em 360, 390, 768, 1024 e 1440 px. Reexecuções não somadas; a suíte histórica completa não foi reexecutada.
 
-## Validação e ativação futura
+028 está apenas preparada no código-fonte: nenhuma migração executada, inclusive em PostgreSQL local nesta rodada. Parser da sintaxe externa e contratos não comprovam execução PL/pgSQL, RLS ou concorrência. Ensaio de banco, backup recuperável, revisão de permissões legadas, instalação autorizada, Auth/Edge, leitor exclusivo e contas individuais reais permanecem pendentes. O site oficial permanece intacto.
 
-**149 testes selecionados aprovados:** 41 PostgreSQL descartável, 25 fluxos visuais G12/G11 no HTML estático exato, 9 de Cronoanálise/Auth frontend, 8 de navegação, 11 de isolamento do pacote e 55 Node. Reexecuções não somadas; suíte histórica completa não reexecutada. Chromium local entre 360 e 1440 px.
-
-G12 corrige a suspensão de conta na simulação, o status dos ministérios suspensos, os registros administrativos de Cadastro/Escalas/Eventos e a aprovação de séries gerais. A Auditoria tem rótulos legíveis para os RPCs reais e mensagens de estado vazio. As dez jornadas solicitadas passaram; o Ancionato semanal e mensal mantém publicação independente.
-
-Os testes SQL usam Auth sintético. GoTrue/SMTP/gateway reais, gravação compartilhada entre dispositivos e integração hospedada ainda dependem de homologação controlada. Esta página é um simulador por aba, não um backend ativo.
-
-Migração 027 preparada após 005–026, sem aplicação no Supabase. Backup recuperável, autorização de implantação, configuração Auth/Edge/domínio institucional e testes reais continuam pendentes. Nenhuma conta, permissão, configuração ou banco real foi alterado.
-
-Código, matriz de permissões e relatório: [branch de desenvolvimento](https://github.com/lcs-casagrande/Avaliacoes_mentorama_SQL/tree/feat/schedule-management-b1), `docs/governance-g12.md`. Versão exata e hashes dos arquivos neste diretório: `manifest.json`.
+Código e matriz: branch `feat/schedule-management-b1` do [repositório de desenvolvimento](https://github.com/lcs-casagrande/Avaliacoes_mentorama_SQL/tree/feat/schedule-management-b1), `docs/governance-g12-institutional.md`. Versão exata e hashes: `manifest.json`.

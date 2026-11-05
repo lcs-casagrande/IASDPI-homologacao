@@ -4,7 +4,7 @@
   "remote_requests_allowed": false,
   "temporary_edits": true,
   "source_branch": "feat/schedule-management-b1",
-  "source_commit": "ff235ba2d312fa2eca0e802cd66a7acb57a7a649",
+  "source_commit": "187ccf3d9194fabd7e923327ab526735e81d224e",
   "source_dirty": false,
   "features": [
     "portal",
@@ -38,28 +38,35 @@
     "account-suspension-fixed",
     "unified-simulated-audit",
     "general-series-approval",
-    "clear-empty-states"
+    "clear-empty-states",
+    "institutional-access-table",
+    "responsible-search",
+    "multi-department-scopes",
+    "shared-member-published-only",
+    "department-archive",
+    "mandatory-handoff-reset"
   ],
   "excluded": [],
   "events": true,
   "calendar_privacy": true,
   "files": {
-    "index.html": "a14ef70a3d7a33302f2f5f4f3fdc48f6e1dd05b05d44bd0124b19d6bafdbcffc",
-    "LEIA-ME.md": "a662ee184f3ea728615e3ed6bbaeea1c8be0d7b34c3e1fb99a50b43d4704eb1f"
+    "index.html": "12b579d5f0f3d6058398a6bf7978e2c7a8383ddc6e3cd2fc4630f20ca5652ead",
+    "LEIA-ME.md": "5b947bfa809208a2021d29f72b969c8f3ffbc23e7d8d9e6621c17f85658520ed"
   },
   "event_management_v2": true,
   "validation": {
-    "selected_unique_tests_passed": 149,
+    "selected_unique_tests_passed": 139,
     "suites": {
-      "postgres.log": 37,
-      "postgres-functional.log": 4,
-      "browser-release.log": 17,
-      "browser-g11-release.log": 8,
+      "browser-release.log": 15,
+      "contracts.log": 8,
+      "node-release.log": 63,
+      "g12-regression.log": 17,
+      "g11-regression.log": 8,
       "crono-regression.log": 9,
       "navigation-regression.log": 8,
-      "package-isolation.log": 11,
-      "node-release.log": 55
+      "package-regression.log": 11
     },
+    "full_historical_suite_rerun": false,
     "viewports": [
       360,
       390,
@@ -67,8 +74,8 @@
       1024,
       1440
     ],
-    "full_historical_suite_rerun": false,
-    "real_auth_edge_gotrue_smtp_validated": false
+    "postgresql_tests_this_round": 0,
+    "migration_executed_anywhere_this_round": false
   },
   "schedule_edit_policy": true,
   "event_approval_required": true,
@@ -77,6 +84,8 @@
   "authentication": "simulated-only",
   "required_future_migrations": "005–027; not executed",
   "published_scope": "static homologation only",
-  "functional_validation_phase": "G12",
-  "session_namespace": "iasdpi-g12-preview-v1"
+  "functional_validation_phase": "G12-institutional",
+  "session_namespace": "iasdpi-institutional-g12-v1",
+  "institutional_access": true,
+  "future_migration": "028 prepared; NOT executed"
 }
