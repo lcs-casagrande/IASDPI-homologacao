@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://pwbxksxxmnblqwpvlheu.supabase.co; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0F4C78">
+  <title>IASDPI · Programação do culto</title>
+  <link rel="stylesheet" data-release-style href="assets/styles-4e4e423960e611fd8a5fcdf79b5ef722b2e83b83decaf17b22aee03679b00c55.css?v=4e4e423960e611fd" integrity="sha256-Tk5COWDmEf2KX833m173IrLoO4PeyvF7Iq7gNnmwDFU=" crossorigin="anonymous">
+<script src="agenda-data.js?v=b0a3bdc63cceba6c" defer></script>
+  <script src="assets/loader-07b1037c04378f831e867944f8b3aa017d22c657fad3cd524e6171bfb4cbcdba.js?v=07b1037c04378f83" integrity="sha256-B7EDfAQ3j4MehnlE+LOqAX0ixlf6081STmFxv7TLzbo=" crossorigin="anonymous" defer></script>
+</head>
+<body>
+  <aside id="pilot-connected-banner" class="demo-banner">Piloto conectado · dados reais do IASD_PI</aside>
+  <a class="skip-link" href="#app">Ir para o conteúdo</a>
+  <header class="header">
+    <a class="brand" href="#organization"><span class="brand-mark">I</span><span>IASDPI<small>Programação do culto</small></span></a>
+    <nav aria-label="Navegação principal">
+      <a href="#church-home" data-page="church-home" data-portal-nav hidden>Início</a>
+      <a href="#schedule-calendar" data-page="schedule-calendar" data-portal-nav hidden>Escalas publicadas</a>
+      <a href="#schedule-build" data-page="schedule-build" data-portal-nav hidden>Montar escala</a>
+      <a href="#portal-login" data-page="portal-login" data-portal-nav hidden>Entrar nas escalas</a>
+      <a href="#home" data-page="home" hidden>Início</a>
+      <a href="#programs" data-page="programs" hidden>Programações</a>
+      <a href="#actuals" data-page="actuals" hidden>Registrar culto</a>
+      <a href="#tracking" data-page="tracking" hidden>Acompanhar</a>
+      <a href="#agendas" data-page="agendas">Escalas e agendas</a>
+      <a href="#schedule-setup" data-page="schedule-setup">Cadastros de escalas</a>
+      <a href="#schedule-members" data-page="schedule-members">Cadastro Geral</a>
+      <a href="#schedule-settings" data-page="schedule-settings">Configurar escalas</a>
+      <a href="#organization" data-page="organization">Organograma</a>
+      <a href="#archive" data-page="archive" hidden>Arquivo e banco</a>
+      <a href="#history" data-page="history" hidden>Histórico</a>
+      <a href="#trash" data-page="trash" hidden>Administração · Lixeira</a>
+      <a href="#models" data-page="models" hidden>Administração · Modelos</a>
+      <a href="#users" data-page="users" hidden>Administração · Usuários</a>
+      <a href="#events" data-page="events" data-event-nav hidden>Gestão de Eventos</a>
+      <a href="#access-admin" data-page="access-admin" data-governance-nav hidden>Gestão de acessos</a>
+      <a href="#access-request" data-page="access-request" data-governance-nav hidden>Solicitar acesso</a>
+      <a href="#login" data-page="login">Entrar</a>
+      <button type="button" id="auth-logout" hidden>Sair</button>
+    </nav>
+  </header>
+  <section id="release-recovery" class="panel" role="status" aria-live="polite"><h2>Preparando IASDPI</h2><p data-release-message>Carregando a aplicação. Se a conexão falhar, tente recarregar; seus registros e rascunhos serão preservados.</p><button type="button" data-release-retry hidden>Tentar novamente</button> <a data-release-reload href="./?iasdpi-update=1">Recarregar página</a></section>
+  <main id="app" tabindex="-1"><p class="empty">Carregando programações…</p></main>
+  <div id="notice" role="status" aria-live="polite" hidden></div>
+  <dialog id="duplicate-dialog">
+    <form id="duplicate-form">
+      <h2>Duplicar programação</h2>
+      <p>Copiar o planejamento e a equipe, sem registros de execução.</p>
+      <label><span class="field-label">Data da nova programação <span class="required-marker" aria-hidden="true">*</span><span class="sr-only"> (obrigatório)</span></span><input type="text" name="date" data-date-input inputmode="numeric" placeholder="dd/mm/aaaa" required></label>
+      <div class="actions"><button type="button" data-action="close-dialog">Cancelar</button><button class="primary" type="submit">Duplicar</button></div>
+    </form>
+  </dialog>
+  <dialog id="correct-date-dialog" aria-labelledby="correct-date-title"><div id="correct-date-preview"></div><div class="actions"><button type="button" id="correct-date-cancel">Cancelar</button><button type="button" class="primary" id="correct-date-confirm">Confirmar correção deste registro</button></div></dialog>
+  <footer>Planejar com clareza. Acompanhar com tranquilidade.</footer>
+</body>
+</html>
