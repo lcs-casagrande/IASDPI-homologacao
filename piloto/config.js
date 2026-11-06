@@ -21,5 +21,6 @@ window.IASDPIConfig = Object.freeze({
   "initialOperational": true,
   "connectionPreparation": false,
   "remoteDisabled": false,
-  "isolatedPilot": true
+  "isolatedPilot": true,
+  "pilotAvailabilityChecks": false
 });

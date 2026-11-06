@@ -11,16 +11,16 @@
     "agenda-data.js"
   ],
   "entry": {
-    "bundle": "assets/app-51420d70d0875fe3343e81a1f2d504a252400d8e509ecd18385849291465eb15.js?v=51420d70d0875fe3",
-    "loader": "assets/loader-07b1037c04378f831e867944f8b3aa017d22c657fad3cd524e6171bfb4cbcdba.js?v=07b1037c04378f83",
-    "styles": "assets/styles-4e4e423960e611fd8a5fcdf79b5ef722b2e83b83decaf17b22aee03679b00c55.css?v=4e4e423960e611fd"
+    "bundle": "assets/app-1187389d84ac266bd39bbf47310e40ff1ccbb8785f2c4fbabac96f317855ae95.js?v=1187389d84ac266b",
+    "loader": "assets/loader-06cb15b8330302976b33e2eb231e31be238439d25dc63ecfb5ac8325cbd8255f.js?v=06cb15b833030297",
+    "styles": "assets/styles-0c30af7c4a2d93e18b1a8bb230bde346bde0e80b9ce0d83dcc3265164a9d2e49.css?v=0c30af7c4a2d93e1"
   },
   "source_commit": "187ccf3d9194fabd7e923327ab526735e81d224e",
   "source_has_uncommitted_changes": true,
   "files": {
-    "index.html": "2c269893d516a9546c8509f1e4b7dd159b7904433c11508a89bb6b2afc45a98d",
-    "styles.css": "111c31d8f5337816c615839b28a20478f04be55023962799f34b3517f73f287e",
-    "config.js": "efe7dd431f1a3f03faee7fa2a1605265fd1cd0920765cd8b9d0970eac760ca67",
+    "index.html": "615eaace6f38cfdc6071d7dfe242a17086eb0c000fc00d0b8739e7ef40a6d0c3",
+    "styles.css": "6f14a29416e23bf34c9cd78ae8627c384f028a0672249952e83119709f8103ce",
+    "config.js": "1a40d2af986a8d188b262f8e7315a829208742be69beabe661ceea044e1c61fe",
     "churches.js": "91e146ca31fa38c920032a36d5415addd90619cd83d6fefa8961879db606e3ec",
     "storage.js": "e1a458ec805557a4b3b81f8d30989bab615f8dbb65d3dfacbac2f7921cae8601",
     "supabase-2.118.0.js": "ee3be8de192b97cb1d73d1e95d6b82bb1f6b658c0f97c4ef757fc331996ed3d3",
@@ -31,7 +31,7 @@
     "operational.js": "93e2c8ba2d74be0a571185417f764e27cae4275f64d8db1642067ccf07558452",
     "actuals.js": "3a3ba10265f205afa54c4900c6202520782c61728bd3cacaa84966b9a4f6f8c2",
     "agenda-data.js": "b0a3bdc63cceba6c07552c24fecdb132212c83f91f4ceb97dbc37e1601ec94d0",
-    "agenda.js": "d924e3ea70c3381427c4d16448620b8ef1535abe93047a45e309ef76e92444ba",
+    "agenda.js": "51cedb21850ae5419bf39df68f12a516fbb222e587a440973699d06a6748c952",
     "archive.js": "573a93daf9162bec8e88c57a33e99c153fe34e0db8d77287d771f7b8e597b386",
     "organization.js": "17c90cce7529d72c51d7eeb319ea2b854771f4938857543590cfedb7efea3497",
     "users.js": "b5f321a25c8ad9a28f40251811e5c13261ff5abf4a149facf5d93ba40653ce02",
@@ -40,15 +40,18 @@
     "navigation.js": "25c22ccb40fe69da0c4a7ed837ba6930177b360c594eef3c7302913b3bcfceb1",
     "conflicts.js": "f71b980e2d96f00ccc2bf564474050f9a3b1a0897cab2f2a16a8eed95a55e989",
     "history.js": "d4bdbfe973c6d9eaccee91c34e8af129e18b3f6be411ec3376de7c411328f6a7",
-    "schedule-foundation.js": "7f06b83ab1571865ea8b235aa48711f2d6a7c60fded75822f349fe79063802ac",
-    "schedule-management.js": "102ff0f5e48fd547c9cc4e7b921f5ec45862fca87b0bee07cb8e9f90c0901db9",
+    "schedule-foundation.js": "44676ae0bc18a951d95da2bffa6c28eca08e4dadcb710485b7531504f90b42c4",
+    "schedule-management.js": "0f00003dbc87f21fdf3dff67050acbdbbd1ccc9b0b9e0802e5cb68d429ce3e4f",
     "governance.js": "c1bd8f83ebeb0d1c4550289a7af0c5d2804118ff3049ec61f7a97ebfe57ad3f0",
     "church-portal.js": "2622d80e5705a91c49700ac09fbc48dfbb1bd88176c3f31e6006538e20436e46",
     "portal-access.js": "4d8ba097ce5c8bcec431722fe5d0af22c06243befa64b7475678656314a40348",
     "app.js": "0765b6f53cf20a0b33024ce57ee8d70bdf926378215ccc1d0154419f1fae1798",
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "assets/app-51420d70d0875fe3343e81a1f2d504a252400d8e509ecd18385849291465eb15.js": "51420d70d0875fe3343e81a1f2d504a252400d8e509ecd18385849291465eb15",
+    "assets/app-1187389d84ac266bd39bbf47310e40ff1ccbb8785f2c4fbabac96f317855ae95.js": "1187389d84ac266bd39bbf47310e40ff1ccbb8785f2c4fbabac96f317855ae95",
+    "assets/loader-06cb15b8330302976b33e2eb231e31be238439d25dc63ecfb5ac8325cbd8255f.js": "06cb15b8330302976b33e2eb231e31be238439d25dc63ecfb5ac8325cbd8255f",
+    "assets/styles-0c30af7c4a2d93e18b1a8bb230bde346bde0e80b9ce0d83dcc3265164a9d2e49.css": "0c30af7c4a2d93e18b1a8bb230bde346bde0e80b9ce0d83dcc3265164a9d2e49",
     "assets/loader-07b1037c04378f831e867944f8b3aa017d22c657fad3cd524e6171bfb4cbcdba.js": "07b1037c04378f831e867944f8b3aa017d22c657fad3cd524e6171bfb4cbcdba",
+    "assets/app-51420d70d0875fe3343e81a1f2d504a252400d8e509ecd18385849291465eb15.js": "51420d70d0875fe3343e81a1f2d504a252400d8e509ecd18385849291465eb15",
     "assets/styles-4e4e423960e611fd8a5fcdf79b5ef722b2e83b83decaf17b22aee03679b00c55.css": "4e4e423960e611fd8a5fcdf79b5ef722b2e83b83decaf17b22aee03679b00c55"
   },
   "initial_operation": true,
@@ -63,17 +66,26 @@
   "advanced_governance_enabled": false,
   "isolated_pilot": true,
   "migration_manifest_sha256": "f5b3cdf3f7e451c45552be9dbe25a460cc1972c6767a003b447e64ecc2b9f071",
+  "automatic_availability_checks": "temporarily-paused-by-owner",
+  "optional_manual_updates": {
+    "pilot/006_event_responsible": {
+      "sha256": "4521e03e9fbf1000470275f44e8fc5289206f288c96c5490c1c1a19e69efe5b3",
+      "required_for": "central-event-responsible-picker",
+      "installed_status": "not-verified-remotely"
+    }
+  },
   "publication_scope": "homologation-exclusive-pilot-path",
   "browser_origin_isolated": false,
   "backup_exception": {
     "backup_performed": false,
     "restore_validated": false,
     "risk_accepted": true,
-    "accepted_by": "Respons\u00e1vel pelo projeto \u2014 decis\u00e3o expressa nesta conversa",
+    "accepted_by": "Responsável pelo projeto — decisão expressa nesta conversa",
     "accepted_at": "2026-11-06T17:04:39.267076+00:00",
-    "reason": "Backup recuper\u00e1vel adiado por decis\u00e3o do respons\u00e1vel, com ci\u00eancia do risco. Exce\u00e7\u00e3o para validar somente o piloto isolado no IASD_Parada; n\u00e3o comprova backup nem restaura\u00e7\u00e3o."
+    "reason": "Backup recuperável adiado por decisão do responsável, com ciência do risco. Exceção para validar somente o piloto isolado no IASD_Parada; não comprova backup nem restauração."
   },
   "backup_status": "deferred-by-owner",
   "backup_performed": false,
-  "restore_validated": false
+  "restore_validated": false,
+  "retained_previous_pilot_assets": 3
 }
