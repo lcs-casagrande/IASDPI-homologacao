@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#103e60">
+<meta name="description" content="Visualização demonstrativa das escalas de Música e Ancionato da IASD Parada Inglesa, novembro de 2026.">
+<title>IASDPI · Escalas em demonstração · Novembro 2026</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#16334a;background:#f3f7fa;line-height:1.5}
+*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}
+.wrap{max-width:1210px;margin:auto;padding:24px 18px 50px}
+.top{background:#103e60;color:white}.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;padding-bottom:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:750}.mark{height:37px;width:37px;background:#f2a538;border-radius:11px;display:grid;place-items:center;color:#103e60;font-weight:900}.sub{display:block;color:#c8deed;font-size:.76rem;font-weight:500}
+.back{font-size:.88rem;color:#e6f0f9;text-decoration:none;border:1px solid #789bb2;border-radius:10px;padding:9px 13px}
+.header{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin:16px 0 17px}
+h1{font-size:clamp(1.7rem,3.7vw,2.55rem);line-height:1.13;letter-spacing:-.035em;margin:7px 0}h2{font-size:1.12rem;margin:0}.eyebrow{letter-spacing:.13em;font-size:.74rem;color:#42627b;font-weight:780;text-transform:uppercase}
+.note{background:#fff6e8;border:1px solid #edd2a7;border-radius:12px;padding:12px 15px;color:#6a4715;font-size:.88rem;max-width:440px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}.stat{background:#fff;border:1px solid #d9e4ec;border-radius:13px;padding:15px}.stat strong{display:block;font-size:1.7rem;color:#164b75;line-height:1.15}.stat span{font-size:.79rem;color:#536f80}
+.panel{background:#fff;border:1px solid #d8e3eb;border-radius:16px;box-shadow:0 5px 20px rgba(15,55,83,.045)}.tool{padding:17px;display:flex;align-items:flex-end;gap:13px;flex-wrap:wrap;margin-bottom:14px}.field{display:flex;flex-direction:column;gap:5px;min-width:160px;flex:1}.field label{color:#475e73;font-size:.79rem;font-weight:750}.field select,.field input{height:43px;border:1px solid #c6d7e1;border-radius:10px;padding:0 12px;width:100%;color:#16334a;background:#fff}.tool .clear{height:43px;border-radius:10px;border:1px solid #ccdce5;background:#f3f7fa;padding:0 13px;color:#254760}
+.layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(290px,1fr);gap:14px;align-items:start}
+.cal-head{display:flex;justify-content:space-between;align-items:center;padding:20px 21px 15px}.small{font-size:.82rem;color:#557185}.legend{display:flex;gap:12px;flex-wrap:wrap}.legend span{font-size:.79rem;display:inline-flex;align-items:center;gap:6px;color:#4b6577}.dot{width:9px;height:9px;display:inline-block;border-radius:50%}.music-dot{background:#9062c8}.elder-dot{background:#d09327}
+.grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;padding:0 12px 14px}.weekday{text-align:center;color:#5c7486;font-weight:750;font-size:.76rem;padding:9px 0}.day{min-height:101px;text-align:left;border:1px solid #e0e8ee;background:#fff;border-radius:10px;padding:8px 5px;display:flex;flex-direction:column;gap:5px;width:100%;color:#173d58}.day:hover{border-color:#719bb5;background:#f5fbff}.day.selected{border:2px solid #1a668e;background:#ecf8ff;padding:7px 4px}.day:focus-visible{outline:3px solid #f2a538;outline-offset:2px}.day .num{font-weight:780;font-size:.89rem}.day .chip{display:block;border-radius:5px;font-size:.68rem;line-height:1.25;padding:3px 4px;overflow-wrap:anywhere}.chip.music{background:#f0e9fb;color:#573489}.chip.elder{background:#fdf1db;color:#7b5116}.other{min-height:101px;background:#f8fbfc;border-radius:10px}
+.details{padding:18px 20px}.detail-head{display:flex;justify-content:space-between;align-items:center;gap:9px;margin-bottom:17px}.dayflag{background:#ecf4f9;border-radius:8px;color:#235375;font-size:.77rem;padding:4px 7px}.group{border-top:1px solid #e4ebf0;padding-top:15px;margin-top:15px}.group-title{font-size:.9rem;font-weight:780;margin-bottom:9px}.people{display:flex;gap:6px;flex-wrap:wrap}.person{background:#f2ebfb;color:#603c90;border:1px solid #e4d6f5;border-radius:9px;padding:5px 8px;font-size:.84rem}.elder-person{background:#fff3e0;color:#885c18;border-color:#f1ddb7}.muted{font-size:.85rem;color:#6c8190}.source{font-size:.78rem;color:#547083;line-height:1.55}.sourcebox{margin-top:14px;padding:17px 19px}.footer{color:#627e91;font-size:.78rem;text-align:center;margin-top:24px}
+@media(max-width:840px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:470px){.wrap{padding-left:10px;padding-right:10px}.day{min-height:78px;padding:5px 3px}.day.selected{padding:4px 2px}.day .chip{font-size:.57rem;padding:3px 2px}.grid{gap:3px;padding:0 6px 10px}.other{min-height:78px}.top .wrap{padding-left:13px;padding-right:13px}.stats{gap:7px}.stat{padding:11px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="https://lcs-casagrande.github.io/IASDPI-homologacao/piloto/#schedule-calendar"><span class="mark">I</span><span>IASDPI<span class="sub">Igreja Adventista da Parada Inglesa</span></span></a><a class="back" href="https://lcs-casagrande.github.io/IASDPI-homologacao/piloto/#schedule-calendar">↗ Calendário conectado</a></div></header>
+<main class="wrap">
+<div class="header"><div><div class="eyebrow">Demonstração estática · sem banco de dados</div><h1>Escalas de novembro de 2026</h1><p class="small">Música e Ancionato, conforme materiais já compartilhados.</p></div><aside class="note"><strong>Ambiente demonstrativo.</strong> Estas informações estão no HTML, não no Supabase. Não substituem as escalas publicadas no calendário conectado.</aside></div>
+<section class="stats" aria-label="Resumo da amostra"><div class="stat"><strong>10</strong><span>Datas com Música</span></div><div class="stat"><strong>39</strong><span>Participações musicais</span></div><div class="stat"><strong>5</strong><span>Períodos semanais de anciãos</span></div><div class="stat"><strong>1</strong><span>Ancião do mês</span></div></section>
+<div class="panel tool"><div class="field"><label for="dept">Departamento</label><select id="dept"><option value="all">Todos</option><option value="music">Música</option><option value="elders">Ancionato</option></select></div><div class="field"><label for="search">Buscar integrante</label><input id="search" type="search" autocomplete="off" placeholder="Ex.: Izabelle, Samuel…"></div><button class="clear" type="button" id="reset">Limpar filtros</button></div>
+<div class="layout">
+<section class="panel" aria-labelledby="cal-title"><div class="cal-head"><div><h2 id="cal-title">Novembro de 2026</h2><span class="small">Selecione um dia para consultar a equipe.</span></div><div class="legend"><span><i class="dot music-dot"></i>Música</span><span><i class="dot elder-dot"></i>Ancionato</span></div></div><div class="grid" id="calendar"></div></section>
+<aside class="panel details" aria-live="polite" id="details"></aside>
+</div>
+<section class="panel sourcebox"><h2>Origem e limites</h2><p class="source"><strong>Música:</strong> “Louvores — Novembro 2026”, PDF enviado pela liderança. Estão incluídas somente as dez datas com pessoas escaladas; sem ministro, hinos e Quarta Teen. Grafias mantidas conforme a escala original (incluindo Victoria, que foi confirmada como Victória Scarpelini para fins de identidade).</p><p class="source"><strong>Ancionato:</strong> períodos de novembro de 2026 presentes na cópia anterior da agenda da igreja. Essa cópia foi sincronizada em 25/10/2026; confirme eventuais mudanças com a liderança.</p><p class="source"><strong>Atenção:</strong> esta página é independente do sistema conectado e não grava, altera nem publica informações. Os filtros funcionam apenas nesta demonstração.</p></section>
+<div class="footer">IASDPI · Visualização estática para validação de layout · Novembro/2026</div>
+</main>
+<script>
+"use strict";
+const music=[
+["2026-11-04",["Izabelle","Hélder"]],
+["2026-11-07",["Gislaine","Izabelle","Laura","Leticia","Henrique","Hélder"]],
+["2026-11-08",["Izabelle","Hélder"]],
+["2026-11-11",["Izabelle","Hélder"]],
+["2026-11-14",["Ana Julia","Victoria","Luisa","Sol","Alexandre","Weslley"]],
+["2026-11-15",["Leticia","Laura","Victoria","Samuel"]],
+["2026-11-18",["Victoria","Alexandre"]],
+["2026-11-21",["Gislaine","Laura","Leticia","Sol","Alexandre","Henrique"]],
+["2026-11-22",["Ana Julia","Luisa"]],
+["2026-11-28",["Ana Julia","Izabelle","Victoria","Luisa","Sol","Hélder","Weslley"]]
+];
+const weekly=[
+["2026-11-01","2026-11-07","Victória Scarpelini"],
+["2026-11-08","2026-11-14","Samuel Ferreira"],
+["2026-11-15","2026-11-21","Raphael Moreira"],
+["2026-11-22","2026-11-28","Marcia Isabel"],
+["2026-11-29","2026-12-05","Elmo Carneiro"]
+];
+const monthElder="Elmo Carneiro";
+const byDate=new Map(music);
+const month="2026-11";
+const cal=document.getElementById("calendar"),details=document.getElementById("details"),dept=document.getElementById("dept"),search=document.getElementById("search");
+let selected="2026-11-07";
+const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("pt-BR");
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt=d=>d.slice(8,10)+"/"+d.slice(5,7)+"/"+d.slice(0,4);
+const elder=d=>weekly.find(([a,b])=>d>=a&&d<=b)?.[2]||null;
+const filt=()=>dept.value,q=()=>norm(search.value.trim());
+function showMusic(d){return filt()!=="elders"&&byDate.has(d)&&(!q()||byDate.get(d).some(p=>norm(p).includes(q())));}
+function showElder(d){return filt()!=="music"&&(!q()||norm(monthElder).includes(q())||norm(elder(d)).includes(q()));}
+function render(){
+const weekdays=["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"];const first=new Date("2026-11-01T12:00:00Z").getUTCDay();let html=weekdays.map(w=>'<div class="weekday">'+w+'</div>').join("");
+for(let i=0;i<first;i++)html+='<div class="other" aria-hidden="true"></div>';
+for(let d=1;d<=30;d++){const date=month+"-"+String(d).padStart(2,"0"),m=showMusic(date),w=elder(date),e=showElder(date),names=byDate.get(date)||[];
+html+='<button class="day'+(date===selected?' selected':'')+'" type="button" data-date="'+date+'" aria-pressed="'+(date===selected)+'" aria-label="'+fmt(date)+(m?'; Música: '+names.join(", "):"")+(e?'; Ancião da semana: '+w:"")+'"><span class="num">'+d+'</span>'+(m?'<span class="chip music">🎵 '+names.length+' pessoas</span>':'')+(e&&(d===1||d===8||d===15||d===22||d===29)?'<span class="chip elder">'+esc(w.split(" ")[0])+' · semana</span>':'')+'</button>';}
+cal.innerHTML=html;
+const people=(byDate.get(selected)||[]).filter(p=>!q()||norm(p).includes(q())),eld=elder(selected),showM=filt()!=="elders"&&people.length>0,showE=filt()!=="music"&&(!q()||norm(monthElder).includes(q())||norm(eld).includes(q()));
+details.innerHTML='<div class="detail-head"><h2>'+fmt(selected)+'</h2><span class="dayflag">'+new Intl.DateTimeFormat("pt-BR",{weekday:"long",timeZone:"UTC"}).format(new Date(selected+"T12:00:00Z"))+'</span></div>'+(showM?'<section class="group"><div class="group-title">🎵 Música · '+people.length+' participante(s)</div><div class="people">'+people.map(p=>'<span class="person">'+esc(p)+'</span>').join("")+'</div></section>':'')+(showE?'<section class="group"><div class="group-title">📖 Ancionato</div><p class="muted">Ancião do mês</p><div class="people"><span class="person elder-person">'+esc(monthElder)+'</span></div><p class="muted">Ancião da semana</p><div class="people"><span class="person elder-person">'+esc(eld)+'</span></div></section>':'')+(!showM&&!showE?'<p class="muted">Nenhuma escala encontrada para este dia e os filtros selecionados.</p>':'')+'<p class="source" style="margin-top:20px">Fonte: escala enviada e agenda previamente compartilhada. Visualização estática.</p>';
+}
+cal.addEventListener("click",e=>{const b=e.target.closest("[data-date]");if(b){selected=b.dataset.date;render();}});
+dept.addEventListener("change",render);search.addEventListener("input",render);document.getElementById("reset").addEventListener("click",()=>{dept.value="all";search.value="";render();});
+render();
+</script>
+</body></html>
