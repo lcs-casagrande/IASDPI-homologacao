@@ -108,17 +108,18 @@ window.IASDPIScheduleCalendar=(()=>{
  const departments=()=>[...new Set([...Object.keys(colors),...data().map(r=>r.department)])].sort((a,b)=>a.localeCompare(b,'pt-BR'));
  const active=d=>ui.departments===null||ui.departments.has(d);
  const unified=()=>window.IASDPIEvents?.enabled()===true;
- const refine={mode:'all',departments:new Set(),people:new Set(),categories:new Set(),panel:false,open:null,search:''};
+ const refine={mode:'home',departments:new Set(),people:new Set(),categories:new Set(),panel:false,open:null,search:''};
+ const publicGuest=()=>window.IASDPIConfig?.calendarPrivacyEnabled&&!IASDPIAuth.identityKey();
  const normalize=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
  const chosen=(set,value)=>!set.size||set.has(value);
  const eventDepartment=e=>e.department_name||e.department||'';
  const eventCategory=e=>e.program_category||'pending';
  const categoryOptions=[['general','Programação Geral'],['departmental','Programação Departamental'],['reserved','Atividade Reservada'],['pending','Pendente de revisão']];
- function matchesEvent(e){return refine.mode!=='scales'&&chosen(refine.departments,eventDepartment(e))&&(refine.mode!=='events'||chosen(refine.categories,eventCategory(e)));}
- const matches=r=>unified()?refine.mode!=='events'&&chosen(refine.departments,r.department)&&(refine.mode!=='scales'||chosen(refine.people,r.person||'__unassigned__')):active(r.department)&&(ui.person==='all'||(r.person||'__unassigned__')===ui.person);
+ function matchesEvent(e){return refine.mode==='home'||(refine.mode!=='scales'&&chosen(refine.departments,eventDepartment(e))&&(refine.mode!=='events'||chosen(refine.categories,eventCategory(e))));}
+ const matches=r=>unified()?(refine.mode==='home'?r.department==='Ancionato':refine.mode!=='events'&&chosen(refine.departments,r.department)&&(refine.mode!=='scales'||chosen(refine.people,r.person||'__unassigned__'))):active(r.department)&&(ui.person==='all'||(r.person||'__unassigned__')===ui.person);
  function filterOptions(){
   const events=window.IASDPIEvents?.allRows(ui.month)||[],rows=data();
-  return {departments:[...new Set([...departments(),...events.map(eventDepartment),...refine.departments].filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt-BR')).map(v=>[v,v]),
+  return {departments:[...new Set([...departments(),...events.map(eventDepartment),...refine.departments].filter(d=>d&&(!publicGuest()||d==='Ancionato'||refine.mode==='events'&&events.some(e=>eventDepartment(e)===d))))].sort((a,b)=>a.localeCompare(b,'pt-BR')).map(v=>[v,v]),
    people:[...new Set([...rows.map(r=>r.person||(r.role?'__unassigned__':null)),...refine.people].filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt-BR')).map(v=>[v,v==='__unassigned__'?'A definir':v]),
    categories:categoryOptions};
  }
@@ -130,13 +131,13 @@ window.IASDPIScheduleCalendar=(()=>{
  }
  function quickDepartments(){
   if(refine.mode!=='scales')return '';
-  const quick=departments();
+  const quick=publicGuest()?['Ancionato']:departments();
   return `<div class="calendar-quick-departments" role="group" aria-label="Filtros rápidos de departamentos"><button type="button" class="calendar-quick-all" data-calendar-quick-all aria-pressed="${refine.departments.size===0}">Todos</button>${quick.map(d=>`<button type="button" class="scale-tag calendar-quick-filter" data-calendar-quick-department="${escape(d)}" data-scale-color="${escape(d)}" aria-pressed="${refine.departments.has(d)}">${icon(d)}<span>${escape(d)}</span>${refine.departments.has(d)?'<span aria-hidden="true">✓</span>':''}</button>`).join('')}</div>`;
  }
  function refinementControls(){
   const options=filterOptions(),count=filterCount(),classified=window.IASDPIEvents.allRows(ui.month).some(e=>e.program_category);
   const chips=refinements().flatMap(([key,label])=>[...refine[key]].map(value=>{const name=options[key].find(([v])=>v===value)?.[1]||value;return `<button type="button" class="calendar-filter-chip" data-calendar-remove="${key}" data-value="${escape(value)}" aria-label="Remover ${escape(label.toLowerCase()+': '+name)}" title="${escape(label+': '+name)}"><span>${escape(name)}</span><span aria-hidden="true">×</span></button>`;})).join('');
-  return `<div class="calendar-filter-toolbar"><div class="calendar-modes" role="group" aria-label="Mostrar no calendário">${[['all','Tudo'],['scales','Escalas'],['events','Eventos']].map(([mode,label])=>`<button type="button" id="calendar-mode-${mode}" data-calendar-mode="${mode}" aria-pressed="${refine.mode===mode}">${label}</button>`).join('')}</div><button type="button" id="calendar-filters-toggle" aria-expanded="${refine.panel}" aria-controls="calendar-refine-panel" data-calendar-toggle><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18M8 3v6M16 9v6M10 15v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Filtros${count?' ('+count+')':''}</button></div>
+  return `<div class="calendar-filter-toolbar"><div class="calendar-modes" role="group" aria-label="Mostrar no calendário">${[['home','Início'],['all','Tudo'],['scales','Escalas'],['events','Eventos']].map(([mode,label])=>`<button type="button" id="calendar-mode-${mode}" data-calendar-mode="${mode}" aria-pressed="${refine.mode===mode}">${label}</button>`).join('')}</div><button type="button" id="calendar-filters-toggle" aria-expanded="${refine.panel}" aria-controls="calendar-refine-panel" data-calendar-toggle><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18M8 3v6M16 9v6M10 15v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Filtros${count?' ('+count+')':''}</button></div>
    ${quickDepartments()}
    <section class="calendar-refine-panel" id="calendar-refine-panel" aria-labelledby="calendar-refine-title" ${refine.panel?'':'hidden'}><h3 id="calendar-refine-title">Refinar calendário</h3><div class="calendar-filter-fields">${refinements().map(([key,label])=>multiselect(key,label,options[key])).join('')}</div><p class="calendar-filter-hint">Sem seleção, todas as opções são consideradas.${refine.departments.size?' As atividades estão restritas aos departamentos selecionados.':''}</p>${refine.mode==='events'&&!classified?'<p class="calendar-option-note">Classificação pendente de revisão. Os dados anteriores permanecem preservados.</p>':''}<div class="calendar-filter-actions"><button type="button" data-calendar-clear>Limpar filtros</button><button type="button" data-events-feed-retry="${escape(ui.month)}">Atualizar calendário</button><button type="button" class="primary" data-calendar-done>Concluir</button></div></section>
    ${chips?`<div class="calendar-active-filters" role="group" aria-label="Filtros ativos">${chips}</div>`:''}`;
@@ -155,7 +156,7 @@ window.IASDPIScheduleCalendar=(()=>{
  });
  document.addEventListener('keydown',e=>{if(!unified()||e.key!=='Escape')return;const dropdown=e.target.closest('details[data-refine-list]');if(dropdown?.open){dropdown.open=false;refine.open=null;dropdown.querySelector('summary').focus();e.preventDefault();e.stopPropagation();}else if(e.target.closest('#calendar-refine-panel')){refine.panel=false;refine.open=null;redraw('calendar-filters-toggle');e.preventDefault();}});
  document.addEventListener('click',e=>{if(!unified()||!refine.open||e.target.closest('details[data-refine-list]'))return;document.querySelectorAll('details[data-refine-list][open]').forEach(el=>el.open=false);refine.open=null;});
- window.addEventListener('iasdpi-church-changed',()=>{clearRefinements();refine.mode='all';refine.panel=false;});
+ for(const ev of ['iasdpi-church-changed','iasdpi-auth-changed','iasdpi-identity-ended'])window.addEventListener(ev,()=>{clearRefinements();refine.mode='home';refine.panel=false;});
  const overlaps=(r,start,end)=>r.startDate?r.startDate<=end&&r.endDate>=start:r.date>=start&&r.date<=end;
  const compareNames=(a,b)=>window.IASDPIScheduleRules?.compareNames(a,b)??String(a||'').localeCompare(String(b||''),'pt-BR',{sensitivity:'base'});
  const sort=rows=>rows.slice().sort((a,b)=>a.date.localeCompare(b.date)||compareNames(a.person||'\uffff',b.person||'\uffff')||compareNames(a.department,b.department)||String(a.id||'').localeCompare(String(b.id||'')));
@@ -249,7 +250,7 @@ window.IASDPIScheduleCalendar=(()=>{
   }catch(error){toast(error.message,true);}
  });
  document.addEventListener('change',e=>{if(!['scale-month','scale-person'].includes(e.target.id))return;try{if(e.target.id==='scale-month')changeMonth(e.target.value);else ui.person=e.target.value;redraw(e.target.id);}catch(error){toast(error.message,true);}});
- function show({month,department}){changeMonth(month);ui.departments=department?new Set([department]):null;ui.person='all';if(unified()){clearRefinements();refine.departments=department?new Set([department]):new Set();}}
+ function show({month,department}){changeMonth(month);const allowed=department&&(!publicGuest()||department==='Ancionato')?department:null;ui.departments=allowed?new Set([allowed]):null;ui.person='all';if(unified()){clearRefinements();refine.mode=allowed?'scales':'home';refine.departments=allowed?new Set([allowed]):new Set();}}
  return {page,mount,legacy,data,periods,segments,monthDays,dayNow,show,matchesEvent};
 })();
 

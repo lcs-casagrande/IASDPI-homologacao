@@ -11,15 +11,15 @@
     "agenda-data.js"
   ],
   "entry": {
-    "bundle": "assets/app-1e88272a5cab27f7b7333fe2712f8ec66108ef40060b9a6879522b75689955cd.js?v=1e88272a5cab27f7",
-    "loader": "assets/loader-3c5b3fe96ae2601f31fa2571be3f2f9fbcfc70d0cd55098d8b25d96d1b291bbe.js?v=3c5b3fe96ae2601f",
+    "bundle": "assets/app-5e85c51329bd8551a8723d0756ba94dd261c6b4815f0adc3377a3a9e7c8a5950.js?v=5e85c51329bd8551",
+    "loader": "assets/loader-a11de96af95f8f2a1154116e726340d9aab659a0039b407587bea74603f5a79b.js?v=a11de96af95f8f2a",
     "styles": "assets/styles-d1770435d1805a77e6b936052d76aee6255adbe798ffc02aebf3d8a6798133e6.css?v=d1770435d1805a77",
     "calendar_compact_mobile": "assets/calendar-compact-mobile-dbcc7804601e2db0780307c640424d8ae747aacd54028735c2fe341f73aeeac6.css?v=dbcc7804601e2db0"
   },
-  "source_commit": "d3d277e45e8701aa93280926d4c6cb47b25e90dc",
+  "source_commit": "d711543c1fd975de17151705d925c39680f60880",
   "source_has_uncommitted_changes": true,
   "files": {
-    "index.html": "6813942d66cbfc9e1976cbac8fa4665bfbf8b6fc5fb452737bfdc0a1a1397eb3",
+    "index.html": "a61e1a287aa3ef3ab412356130bfada69b11d70a23b34c0b91aab1e14f78db7e",
     "styles.css": "7ebbb113c4cdce2f4191303605f43aa21baaacf841f980d9d088244687672a57",
     "config.js": "1a40d2af986a8d188b262f8e7315a829208742be69beabe661ceea044e1c61fe",
     "churches.js": "91e146ca31fa38c920032a36d5415addd90619cd83d6fefa8961879db606e3ec",
@@ -32,7 +32,7 @@
     "operational.js": "93e2c8ba2d74be0a571185417f764e27cae4275f64d8db1642067ccf07558452",
     "actuals.js": "3a3ba10265f205afa54c4900c6202520782c61728bd3cacaa84966b9a4f6f8c2",
     "agenda-data.js": "b0a3bdc63cceba6c07552c24fecdb132212c83f91f4ceb97dbc37e1601ec94d0",
-    "agenda.js": "ca0761d83db89b174943ff8e96d3287d0393728ec18fca0857a771345ac9ea4f",
+    "agenda.js": "c36358a29968e8c83552edabdb8d2603914e99c877d4a11f9dae93a2db2fdd26",
     "archive.js": "573a93daf9162bec8e88c57a33e99c153fe34e0db8d77287d771f7b8e597b386",
     "organization.js": "17c90cce7529d72c51d7eeb319ea2b854771f4938857543590cfedb7efea3497",
     "users.js": "b5f321a25c8ad9a28f40251811e5c13261ff5abf4a149facf5d93ba40653ce02",
@@ -45,14 +45,14 @@
     "schedule-management.js": "159fea96b32baf489bac7bd5ed23499810c69015aae3d786d5b20d1ddb1a5d14",
     "governance.js": "c1bd8f83ebeb0d1c4550289a7af0c5d2804118ff3049ec61f7a97ebfe57ad3f0",
     "church-portal.js": "2622d80e5705a91c49700ac09fbc48dfbb1bd88176c3f31e6006538e20436e46",
-    "portal-access.js": "327d9f3edd3555bc94b164b4358f4b0e7bf459c86d83c1270615afcb1f17ab6e",
+    "portal-access.js": "4968c70f40eeb2e33f8fd006fe6f0b71d29036aec2743fcbeafbcdc8fd935e1d",
     "app.js": "0765b6f53cf20a0b33024ce57ee8d70bdf926378215ccc1d0154419f1fae1798",
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "assets/styles-d1770435d1805a77e6b936052d76aee6255adbe798ffc02aebf3d8a6798133e6.css": "d1770435d1805a77e6b936052d76aee6255adbe798ffc02aebf3d8a6798133e6",
     "calendar-compact-mobile.css": "dbcc7804601e2db0780307c640424d8ae747aacd54028735c2fe341f73aeeac6",
     "assets/calendar-compact-mobile-dbcc7804601e2db0780307c640424d8ae747aacd54028735c2fe341f73aeeac6.css": "dbcc7804601e2db0780307c640424d8ae747aacd54028735c2fe341f73aeeac6",
-    "assets/app-1e88272a5cab27f7b7333fe2712f8ec66108ef40060b9a6879522b75689955cd.js": "1e88272a5cab27f7b7333fe2712f8ec66108ef40060b9a6879522b75689955cd",
-    "assets/loader-3c5b3fe96ae2601f31fa2571be3f2f9fbcfc70d0cd55098d8b25d96d1b291bbe.js": "3c5b3fe96ae2601f31fa2571be3f2f9fbcfc70d0cd55098d8b25d96d1b291bbe"
+    "assets/app-5e85c51329bd8551a8723d0756ba94dd261c6b4815f0adc3377a3a9e7c8a5950.js": "5e85c51329bd8551a8723d0756ba94dd261c6b4815f0adc3377a3a9e7c8a5950",
+    "assets/loader-a11de96af95f8f2a1154116e726340d9aab659a0039b407587bea74603f5a79b.js": "a11de96af95f8f2a1154116e726340d9aab659a0039b407587bea74603f5a79b"
   },
   "initial_operation": true,
   "initial_active": true,
