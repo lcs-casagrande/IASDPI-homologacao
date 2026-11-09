@@ -226,7 +226,7 @@ window.IASDPIScheduleCalendar=(()=>{
   document.querySelectorAll('[data-scale-color]').forEach(el=>{const d=el.dataset.scaleColor,[bg,fg]=colors[d]||[`hsl(${(extras.indexOf(d)*137.508+24)%360} 65% 91%)`,'#24313b'];el.style.backgroundColor=el.matches('.scale-filter[aria-pressed="false"],.calendar-quick-filter[aria-pressed="false"]')?'#fff':el.dataset.scaleKind==='weekly'?'#f2e1aa':bg;el.style.color=fg;el.style.borderColor=fg;});
   document.querySelectorAll('.scale-help-control').forEach(help=>{
    const button=help.querySelector('button'),tip=help.querySelector('[role=tooltip]');let pinned=false;
-   const show=open=>{tip.hidden=!open;button.setAttribute('aria-expanded',String(open));if(open&&help.classList.contains('schedule-help-control')){const rect=button.getBoundingClientRect(),width=Math.min(320,innerWidth-32),height=tip.getBoundingClientRect().height;tip.style.left=Math.max(16,Math.min(rect.left,innerWidth-width-16))+'px';tip.style.top=Math.max(8,rect.bottom+height+12<innerHeight?rect.bottom+6:rect.top-height-6)+'px';}};
+   const show=open=>{tip.hidden=!open;button.setAttribute('aria-expanded',String(open));if(open&&help.classList.contains('schedule-help-control')){const rect=button.getBoundingClientRect(),bounds=tip.getBoundingClientRect(),width=bounds.width,height=bounds.height,above=rect.top-height-6;tip.style.left=Math.max(16,Math.min(rect.left,innerWidth-width-16))+'px';tip.style.top=Math.max(8,help.classList.contains('schedule-help-compact')&&above>=8?above:rect.bottom+height+12<innerHeight?rect.bottom+6:above)+'px';}};
    help.onmouseenter=()=>show(true);
    help.onmouseleave=()=>{if(!pinned&&!button.matches(':focus-visible'))show(false);};
    button.onfocus=()=>{if(button.matches(':focus-visible'))show(true);};
