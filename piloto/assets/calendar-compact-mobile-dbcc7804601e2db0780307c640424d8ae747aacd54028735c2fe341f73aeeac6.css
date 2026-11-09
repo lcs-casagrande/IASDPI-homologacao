@@ -1,0 +1,15 @@
+/* IASDPI piloto: calendario mensal com colunas proporcionais no celular.
+   Mantem os textos das escalas e eventos como no calendario original. */
+@media (max-width: 600px) {
+  .scale-month-panel .scale-calendar {
+    width: 100%;
+    table-layout: fixed;
+  }
+  .scale-month-panel .scale-calendar thead th:nth-child(1) { width: 18%; }
+  .scale-month-panel .scale-calendar thead th:nth-child(2),
+  .scale-month-panel .scale-calendar thead th:nth-child(3),
+  .scale-month-panel .scale-calendar thead th:nth-child(5),
+  .scale-month-panel .scale-calendar thead th:nth-child(6) { width: 11%; }
+  .scale-month-panel .scale-calendar thead th:nth-child(4) { width: 18%; }
+  .scale-month-panel .scale-calendar thead th:nth-child(7) { width: 20%; }
+}
