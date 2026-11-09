@@ -130,8 +130,8 @@ window.IASDPIScheduleCalendar=(()=>{
  }
  function quickDepartments(){
   if(refine.mode!=='scales')return '';
-  const guest=window.IASDPIConfig?.calendarPrivacyEnabled&&!window.IASDPIConfig?.initialOperational&&!IASDPIAuth.identityKey(),quick=guest?['Ancionato']:departments();
-  return `<div class="calendar-quick-departments" role="group" aria-label="Filtros rápidos de departamentos">${guest?'':`<button type="button" class="calendar-quick-all" data-calendar-quick-all aria-pressed="${refine.departments.size===0}">Todos</button>`}${quick.map(d=>`<button type="button" class="scale-tag calendar-quick-filter" data-calendar-quick-department="${escape(d)}" data-scale-color="${escape(d)}" aria-pressed="${refine.departments.has(d)}">${icon(d)}<span>${escape(d)}</span>${refine.departments.has(d)?'<span aria-hidden="true">✓</span>':''}</button>`).join('')}${guest?'<a class="calendar-login-reminder" href="#portal-login" data-page="portal-login">Logar para demais escalas</a>':''}</div>`;
+  const quick=departments();
+  return `<div class="calendar-quick-departments" role="group" aria-label="Filtros rápidos de departamentos"><button type="button" class="calendar-quick-all" data-calendar-quick-all aria-pressed="${refine.departments.size===0}">Todos</button>${quick.map(d=>`<button type="button" class="scale-tag calendar-quick-filter" data-calendar-quick-department="${escape(d)}" data-scale-color="${escape(d)}" aria-pressed="${refine.departments.has(d)}">${icon(d)}<span>${escape(d)}</span>${refine.departments.has(d)?'<span aria-hidden="true">✓</span>':''}</button>`).join('')}</div>`;
  }
  function refinementControls(){
   const options=filterOptions(),count=filterCount(),classified=window.IASDPIEvents.allRows(ui.month).some(e=>e.program_category);
