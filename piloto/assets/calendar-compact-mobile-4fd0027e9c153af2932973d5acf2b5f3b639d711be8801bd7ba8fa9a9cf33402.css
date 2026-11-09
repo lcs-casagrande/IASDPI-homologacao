@@ -1,0 +1,76 @@
+/* IASDPI piloto: calendario mensal compacto para telas pequenas.
+   As datas mantem a ordem completa e os compromissos continuam nos detalhes. */
+@media (max-width: 600px) {
+  .scale-month-panel .scale-calendar {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  /* Dom, Qua e Sab recebem mais largura; os outros dias permanecem acessiveis. */
+  .scale-month-panel .scale-calendar thead th:nth-child(1) { width: 18%; }
+  .scale-month-panel .scale-calendar thead th:nth-child(2),
+  .scale-month-panel .scale-calendar thead th:nth-child(3),
+  .scale-month-panel .scale-calendar thead th:nth-child(5),
+  .scale-month-panel .scale-calendar thead th:nth-child(6) { width: 11%; }
+  .scale-month-panel .scale-calendar thead th:nth-child(4) { width: 18%; }
+  .scale-month-panel .scale-calendar thead th:nth-child(7) { width: 20%; }
+  .scale-month-panel .scale-calendar thead th {
+    padding: 8px 0;
+    font-size: 10px;
+    overflow: hidden;
+  }
+
+  .scale-month-panel .scale-calendar .scale-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-sizing: border-box;
+    height: 58px;
+    min-height: 58px;
+    padding: 5px 1px;
+    overflow: hidden;
+    font-size: 12px;
+  }
+  .scale-month-panel .scale-calendar .scale-day-number { font-size: 12px; }
+
+  /* Os textos ficam no painel de detalhes, sem alterar dados nem filtros. */
+  .scale-month-panel .scale-calendar .scale-day .scale-tag,
+  .scale-month-panel .scale-calendar .scale-day .event-chip { display: none; }
+
+  /* Marcador visual para qualquer escala pontual ou evento neste dia. */
+  .scale-month-panel .scale-calendar .scale-day:has(.scale-tag, .event-chip)::after {
+    content: '';
+    display: block;
+    flex: none;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #14608c;
+  }
+
+  .scale-month-panel .scale-calendar .scale-days-row td:nth-child(1) .scale-day,
+  .scale-month-panel .scale-calendar .scale-days-row td:nth-child(4) .scale-day,
+  .scale-month-panel .scale-calendar .scale-days-row td:nth-child(7) .scale-day {
+    background: #edf4f8;
+    color: #15374d;
+    font-weight: 650;
+  }
+  .scale-month-panel .scale-calendar .scale-days-row td:nth-child(2) .scale-day,
+  .scale-month-panel .scale-calendar .scale-days-row td:nth-child(3) .scale-day,
+  .scale-month-panel .scale-calendar .scale-days-row td:nth-child(5) .scale-day,
+  .scale-month-panel .scale-calendar .scale-days-row td:nth-child(6) .scale-day {
+    color: #627381;
+  }
+  .scale-month-panel .scale-calendar .scale-day[aria-pressed='true'] {
+    box-shadow: inset 0 0 0 2px #0f4c78;
+  }
+  .scale-month-panel .scale-calendar .scale-number-row td {
+    height: 20px;
+    padding: 2px 0;
+    text-align: center;
+  }
+  .scale-month-panel .scale-calendar .scale-band-label { display: none; }
+  .scale-month-panel .scale-calendar .scale-band { font-size: 10px; }
+}

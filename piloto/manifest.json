@@ -13,12 +13,13 @@
   "entry": {
     "bundle": "assets/app-e404e9cdeaab6cff0b998f07efd9a7464be57c74abe25d9e2d60f687ce7aa167.js?v=e404e9cdeaab6cff",
     "loader": "assets/loader-133613f9971c6f54922baad1a6451d32ef4ea8934aa66f5e9fd3b7f516bf7cbb.js?v=133613f9971c6f54",
-    "styles": "assets/styles-d1770435d1805a77e6b936052d76aee6255adbe798ffc02aebf3d8a6798133e6.css?v=d1770435d1805a77"
+    "styles": "assets/styles-d1770435d1805a77e6b936052d76aee6255adbe798ffc02aebf3d8a6798133e6.css?v=d1770435d1805a77",
+    "calendar_compact_mobile": "assets/calendar-compact-mobile-4fd0027e9c153af2932973d5acf2b5f3b639d711be8801bd7ba8fa9a9cf33402.css?v=4fd0027e9c153af2"
   },
   "source_commit": "187ccf3d9194fabd7e923327ab526735e81d224e",
   "source_has_uncommitted_changes": true,
   "files": {
-    "index.html": "a79f0fb20069f407f7d551a14b3d190f63b431b419912cb139575057cac3eb35",
+    "index.html": "549232bcae9899c3f0628d7cc506755c186f18cbd60008c0af6ac87b0a70e3a9",
     "styles.css": "7ebbb113c4cdce2f4191303605f43aa21baaacf841f980d9d088244687672a57",
     "config.js": "1a40d2af986a8d188b262f8e7315a829208742be69beabe661ceea044e1c61fe",
     "churches.js": "91e146ca31fa38c920032a36d5415addd90619cd83d6fefa8961879db606e3ec",
@@ -49,7 +50,9 @@
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "assets/app-e404e9cdeaab6cff0b998f07efd9a7464be57c74abe25d9e2d60f687ce7aa167.js": "e404e9cdeaab6cff0b998f07efd9a7464be57c74abe25d9e2d60f687ce7aa167",
     "assets/loader-133613f9971c6f54922baad1a6451d32ef4ea8934aa66f5e9fd3b7f516bf7cbb.js": "133613f9971c6f54922baad1a6451d32ef4ea8934aa66f5e9fd3b7f516bf7cbb",
-    "assets/styles-d1770435d1805a77e6b936052d76aee6255adbe798ffc02aebf3d8a6798133e6.css": "d1770435d1805a77e6b936052d76aee6255adbe798ffc02aebf3d8a6798133e6"
+    "assets/styles-d1770435d1805a77e6b936052d76aee6255adbe798ffc02aebf3d8a6798133e6.css": "d1770435d1805a77e6b936052d76aee6255adbe798ffc02aebf3d8a6798133e6",
+    "calendar-compact-mobile.css": "4fd0027e9c153af2932973d5acf2b5f3b639d711be8801bd7ba8fa9a9cf33402",
+    "assets/calendar-compact-mobile-4fd0027e9c153af2932973d5acf2b5f3b639d711be8801bd7ba8fa9a9cf33402.css": "4fd0027e9c153af2932973d5acf2b5f3b639d711be8801bd7ba8fa9a9cf33402"
   },
   "initial_operation": true,
   "initial_active": true,
@@ -77,9 +80,9 @@
     "backup_performed": false,
     "restore_validated": false,
     "risk_accepted": true,
-    "accepted_by": "Respons\u00e1vel pelo projeto \u2014 decis\u00e3o expressa nesta conversa",
+    "accepted_by": "Responsável pelo projeto — decisão expressa nesta conversa",
     "accepted_at": "2026-11-06T17:04:39.267076+00:00",
-    "reason": "Backup recuper\u00e1vel adiado por decis\u00e3o do respons\u00e1vel, com ci\u00eancia do risco. Exce\u00e7\u00e3o para validar somente o piloto isolado no IASD_Parada; n\u00e3o comprova backup nem restaura\u00e7\u00e3o."
+    "reason": "Backup recuperável adiado por decisão do responsável, com ciência do risco. Exceção para validar somente o piloto isolado no IASD_Parada; não comprova backup nem restauração."
   },
   "backup_status": "deferred-by-owner",
   "backup_performed": false,
