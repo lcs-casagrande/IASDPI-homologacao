@@ -1,0 +1,5 @@
+# Preparação somente; nenhum deploy ou migração automática.
+[functions.alias-login]
+verify_jwt = false
+[functions.pilot-password]
+verify_jwt = false

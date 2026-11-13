@@ -3,6 +3,8 @@
 window.IASDPIConfig = Object.freeze({
   "churchIsolationEnabled": true,
   "aliasLoginEnabled": false,
+  "pilotProfilesPrepared": true,
+  "pilotProfilesEnabled": false,
   "governanceEnabled": false,
   "portalAccessEnabled": true,
   "centralRegistryEnabled": true,

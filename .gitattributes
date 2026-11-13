@@ -1,0 +1,2 @@
+# Bundle gerado inclui literais do SDK; revisar os arquivos-fonte e validar SRI.
+piloto/assets/app-*.js -whitespace
