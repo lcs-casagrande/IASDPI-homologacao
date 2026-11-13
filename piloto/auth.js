@@ -170,10 +170,10 @@ window.IASDPIAuth = (() => {
     await credentialGate(token);identityChurch=church;return {token,user};
   }
   const aliasEnabled=()=>window.IASDPIConfig?.aliasLoginEnabled===true;
-  function loginIdentifierField(){return aliasEnabled()?field('Identificador ou e-mail','email','','text',true,'autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="254"'):field('E-mail','email','','email',true,'autocomplete="username"');}
+  function loginIdentifierField(institutional=false){if(institutional)return field('Usuário','email','','text',true,'autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="64"');return aliasEnabled()?field('Identificador ou e-mail','email','','text',true,'autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="254"'):field('E-mail','email','','email',true,'autocomplete="username"');}
   async function aliasSession(identifier,password,cfg){
     const failure=()=>Error('Não foi possível entrar. Confira a identificação e a senha ou tente mais tarde.');
-    if(!aliasEnabled()||!window.IASDPIChurches?.enabled())throw Error('Login institucional ainda não ativado. Utilize seu e-mail.');
+    if(!aliasEnabled()||!window.IASDPIChurches?.enabled())throw Error('Login por usuário aguarda ativação administrativa.');
     identifier=identifier.trim().toLowerCase();if(!/^[a-z][a-z0-9._-]{2,63}$/.test(identifier))throw failure();
     const church=await IASDPIChurches.ensure(),path='/functions/v1/alias-login';
     if(!remoteRequestAllowed(path,'POST'))throw failure();
@@ -195,7 +195,7 @@ window.IASDPIAuth = (() => {
     signingIn=true;status('recovering','Confirmando acesso…');
     try{
       const identifier=String(email||'').trim();
-      const {data,error}=identifier.includes('@')?await getClient().auth.signInWithPassword({email:identifier,password}):await aliasSession(identifier,password,cfg);
+      const {data,error}=identifier.includes('@')&&!options.institutional?await getClient().auth.signInWithPassword({email:identifier,password}):await aliasSession(identifier,password,cfg);
       if(error)throw Error('Não foi possível entrar. Confira e-mail, senha e conexão.');
       adopt(data.session);
       if(inviteToken)await jsonRequest('/rest/v1/rpc/iasdpi_accept_invite',{method:'POST',headers:{Authorization:'Bearer '+session.access_token,'Content-Type':'application/json'},body:JSON.stringify({p_token:inviteToken})});
@@ -285,23 +285,24 @@ window.IASDPIAuth = (() => {
     if(signedOut.error)throw Error('Senha alterada, mas não foi possível encerrar a sessão local. Recarregue e entre com a nova senha.');
   }
   function forgotPasswordPage(){
+    if(window.IASDPIConfig?.pilotProfilesEnabled)return heading('ACESSO','Recuperar acesso')+'<section class="panel auth-panel"><p>Procure a administração da igreja para verificar sua identidade e redefinir o acesso. A senha anterior não é consultada nem enviada.</p><a href="#portal-login" data-page="portal-login">Voltar para Entrar</a></section>';
     if(bootInProgress)return heading('ACESSO','Recuperar senha')+'<p role="status">Preparando formulário de recuperação…</p>';
     return heading('ACESSO','Recuperar senha','Informe seu e-mail. Esta solicitação não concede autorização de acesso à igreja.')+`<section class="panel auth-panel"><form id="password-request-form">${field('E-mail','email','','email',true,'autocomplete="email"')}<button type="submit" class="primary">Enviar link de recuperação</button><p class="password-feedback" role="status" aria-live="polite"></p></form><p><a href="#login" data-auth-page="login">Voltar para Entrar</a></p></section>`;
   }
   async function changeOwnPassword(password){
-    if(!session||!window.IASDPIConfig?.responsibilityGovernanceEnabled)throw Error('Entre para alterar sua senha.');
-    const cfg=config(),token=session.access_token;
-    if(!remoteRequestAllowed('/functions/v1/access-assistance','POST'))throw Error('Alteração remota bloqueada neste ambiente.');
+    if(!session||!(window.IASDPIConfig?.responsibilityGovernanceEnabled||window.IASDPIPortalAccess?.profile()?.profile_access))throw Error('Entre para alterar sua senha.');
+    const cfg=config(),token=session.access_token,pilot=Boolean(window.IASDPIPortalAccess?.profile()?.profile_access),path=pilot?'/functions/v1/pilot-password':'/functions/v1/access-assistance';
+    if(!remoteRequestAllowed(path,'POST'))throw Error('Alteração remota bloqueada neste ambiente.');
     const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),30000);
     try{
-      const response=await fetch(cfg.url+'/functions/v1/access-assistance',{method:'POST',redirect:'error',signal:controller.signal,headers:{apikey:cfg.key,Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify({action:'change_password',church:await IASDPIChurches.ensure(),password})});
+      const response=await fetch(cfg.url+path,{method:'POST',redirect:'error',signal:controller.signal,headers:{apikey:cfg.key,Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify({...(!pilot?{action:'change_password'}:{}),church:await IASDPIChurches.ensure(),password})});
       if(!response.ok)throw Error('Não foi possível concluir a alteração. Tente entrar novamente ou procure a administração.');
       const result=await response.json();if(result.completed!==true)throw Error('Alteração não confirmada.');
-      await getClient().auth.signOut({scope:'local'});adopt(null);invalidate('anonymous','Senha alterada. Aguarde dois segundos e entre novamente.',true);location.hash='#login';
+      await getClient().auth.signOut({scope:'local'});adopt(null);invalidate('anonymous','Senha alterada. Aguarde dois segundos e entre novamente.',true);location.hash=pilot?'#portal-login':'#login';
     }finally{clearTimeout(timer);}
   }
   function resetPasswordPage(){
-    if(window.IASDPIConfig?.responsibilityGovernanceEnabled&&session&&!passwordRecoveryActive())return heading('MINHA CONTA','Alterar senha')+`<section class="panel auth-panel"><p role="status">${esc(passwordMessage||'Defina uma senha individual. Não use seu apelido como senha.')}</p><form id="own-password-form">${field('Nova senha','password','','password',true,'minlength="12" maxlength="256" autocomplete="new-password"')}${field('Confirmar nova senha','repeat','','password',true,'minlength="12" maxlength="256" autocomplete="new-password"')}<button class="primary">Alterar senha</button><p role="status" data-password-feedback></p></form></section>`;
+    if((window.IASDPIConfig?.responsibilityGovernanceEnabled||window.IASDPIPortalAccess?.profile()?.profile_access)&&session&&!passwordRecoveryActive())return heading('MINHA CONTA','Alterar senha')+`<section class="panel auth-panel"><p role="status">${esc(window.IASDPIPortalAccess?.profile()?.must_change_password?'Altere sua senha provisória para continuar.':'Defina uma senha individual. Não use seu apelido como senha.')}</p><form id="own-password-form">${field('Nova senha','password','','password',true,'minlength="12" maxlength="256" autocomplete="new-password"')}${field('Confirmar nova senha','repeat','','password',true,'minlength="12" maxlength="256" autocomplete="new-password"')}<button class="primary">Alterar senha</button><p role="status" data-password-feedback></p></form></section>`;
     if(bootInProgress)return heading('ACESSO','Definir nova senha')+'<p role="status">Conferindo sessão de recuperação…</p>';
     return heading('ACESSO','Definir nova senha','A redefinição usa uma sessão de recuperação do Supabase e não altera as permissões da conta.')+`<section class="panel auth-panel"><p role="status">${esc(passwordRecoveryActive()?'Link confirmado. Defina sua nova senha.':passwordMessage)}</p>${passwordRecoveryActive()?`<form id="password-reset-form">${field('Nova senha','password','','password',true,'minlength="12" maxlength="256" autocomplete="new-password"')}${field('Confirmar nova senha','repeat','','password',true,'minlength="12" maxlength="256" autocomplete="new-password"')}<button type="submit" class="primary">Definir nova senha</button></form>`:`<p><a href="#forgot-password" data-auth-page="forgot-password">Solicitar novo link</a></p>`}<p><a href="#login" data-auth-page="login">Voltar para Entrar</a></p></section>`;
   }

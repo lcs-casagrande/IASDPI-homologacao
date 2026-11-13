@@ -1,0 +1,27 @@
+name: Piloto — perfis e artefatos
+on:
+  pull_request:
+  push:
+    branches: [feature/issue-1-acessos]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright==1.62.0
+      - run: python -m playwright install --with-deps chromium
+      - run: node --test tests/*.test.mjs
+      - run: docker run -d --name iasdpi-ci --network none -e POSTGRES_HOST_AUTH_METHOD=trust postgres:17-bookworm
+      - run: for attempt in $(seq 1 30); do docker exec iasdpi-ci pg_isready -U postgres && exit 0; sleep 1; done; exit 1
+      - run: python -m unittest discover -s tests -p 'test_*.py' -v
+        env:
+          IASDPI_PG_TEST_CONTAINER: iasdpi-ci
+      - run: node piloto/tools/build.mjs --preview
